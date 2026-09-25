@@ -1,11 +1,10 @@
 import React from 'react'
 import ReactDOM from 'react-dom/client'
-import AppV2 from './AppV2.jsx'
-import './styles.css'
-import './hero-v2.css'
+import UltraShowcase from './UltraShowcase.jsx'
+import './ultra-showcase.css'
 
 ReactDOM.createRoot(document.getElementById('root')).render(
   <React.StrictMode>
-    <AppV2 />
+    <UltraShowcase />
   </React.StrictMode>,
 )
