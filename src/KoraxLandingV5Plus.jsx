@@ -6,14 +6,10 @@ import {
   BadgeCheck,
   BrainCircuit,
   Check,
-  Instagram,
-  Linkedin,
   Mail,
   MessageCircle,
   Route,
   Sparkles,
-  Workflow,
-  Youtube,
 } from 'lucide-react'
 import KoraxLandingV5 from './KoraxLandingV5.jsx'
 
@@ -135,9 +131,9 @@ function ProfessionalFooter() {
   ]
 
   const socials = [
-    [Instagram, 'Instagram', '#'],
-    [Linkedin, 'LinkedIn', '#'],
-    [Youtube, 'YouTube', '#'],
+    ['IG', 'Instagram', '#'],
+    ['IN', 'LinkedIn', '#'],
+    ['YT', 'YouTube', '#'],
   ]
 
   return (
@@ -171,8 +167,8 @@ function ProfessionalFooter() {
             <a href="mailto:contato@usekorax.com"><Mail size={15} /> contato@usekorax.com</a>
             <a href="#especialista">Diego Nogueira <ArrowUpRight size={14} /></a>
             <div className="v5plus-socials">
-              {socials.map(([Icon, label, href]) => (
-                <a key={label} href={href} aria-label={label} title={`${label} — link será adicionado`}><Icon size={17} /></a>
+              {socials.map(([mark, label, href]) => (
+                <a key={label} href={href} aria-label={label} title={`${label} — link será adicionado`}><span>{mark}</span></a>
               ))}
             </div>
           </div>
