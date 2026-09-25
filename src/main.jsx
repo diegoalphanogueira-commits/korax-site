@@ -1,11 +1,12 @@
 import React from 'react'
 import ReactDOM from 'react-dom/client'
-import KoraxLandingV5Plus from './KoraxLandingV5Plus.jsx'
+import KoraxLandingV6 from './KoraxLandingV6.jsx'
 import './korax-landing-v5.css'
 import './v5plus-authority-footer.css'
+import './korax-landing-v6.css'
 
 ReactDOM.createRoot(document.getElementById('root')).render(
   <React.StrictMode>
-    <KoraxLandingV5Plus />
+    <KoraxLandingV6 />
   </React.StrictMode>,
 )
