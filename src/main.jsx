@@ -1,10 +1,10 @@
 import React from 'react'
 import ReactDOM from 'react-dom/client'
-import KoraxLandingV4 from './KoraxLandingV4.jsx'
-import './korax-landing-v4.css'
+import KoraxLandingV5 from './KoraxLandingV5.jsx'
+import './korax-landing-v5.css'
 
 ReactDOM.createRoot(document.getElementById('root')).render(
   <React.StrictMode>
-    <KoraxLandingV4 />
+    <KoraxLandingV5 />
   </React.StrictMode>,
 )
