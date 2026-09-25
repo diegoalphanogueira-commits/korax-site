@@ -1,10 +1,10 @@
 import React from 'react'
 import ReactDOM from 'react-dom/client'
-import UltraShowcasePro from './UltraShowcasePro.jsx'
-import './ultra-showcase-pro.css'
+import KoraxLandingV4 from './KoraxLandingV4.jsx'
+import './korax-landing-v4.css'
 
 ReactDOM.createRoot(document.getElementById('root')).render(
   <React.StrictMode>
-    <UltraShowcasePro />
+    <KoraxLandingV4 />
   </React.StrictMode>,
 )
