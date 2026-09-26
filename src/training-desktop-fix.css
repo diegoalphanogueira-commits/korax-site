@@ -2,8 +2,8 @@
    Scoped to notebook and desktop only so mobile remains untouched. */
 @media (min-width: 1021px) {
   .v5-training {
-    padding-top: 88px;
-    padding-bottom: 96px;
+    padding-top: 82px;
+    padding-bottom: 92px;
   }
 
   .v5-training .v5-shell {
@@ -16,11 +16,11 @@
     align-items: start;
   }
 
-  /* Remove the sticky behavior that was making the two columns feel disconnected while scrolling. */
   .v5-training-copy {
     position: static;
     top: auto;
     max-width: 560px;
+    overflow: visible;
   }
 
   .v5-training-copy .v5-label {
@@ -28,19 +28,22 @@
     letter-spacing: .14em;
   }
 
+  /* Keep the complete training proposition on one continuous line on desktop. */
   .v5-training-copy h2 {
-    max-width: 560px;
-    margin: 16px 0 18px;
-    font-size: clamp(44px, 3.8vw, 54px);
-    line-height: 1.015;
-    letter-spacing: -.045em;
-    text-wrap: pretty;
+    width: calc(200% + 56px);
+    max-width: none;
+    margin: 16px 0 22px;
+    font-size: clamp(32px, 2.55vw, 36px);
+    line-height: 1.08;
+    letter-spacing: -.04em;
+    white-space: nowrap;
+    text-wrap: nowrap;
   }
 
   .v5-training-copy h2 em {
-    display: block;
-    margin-top: 5px;
-    line-height: 1.02;
+    display: inline;
+    margin: 0;
+    line-height: inherit;
   }
 
   .v5-training-copy > p {
@@ -63,9 +66,11 @@
     object-position: center;
   }
 
+  /* Leave breathing room for the headline that visually spans both columns. */
   .v5-journey-list {
     gap: 10px;
     align-content: start;
+    padding-top: 66px;
   }
 
   .v5-journey-item {
@@ -129,12 +134,16 @@
   }
 
   .v5-training-copy h2 {
-    max-width: 585px;
-    font-size: 56px;
+    width: calc(200% + 62px);
+    font-size: 38px;
   }
 
   .v5-training-copy .v5-image-slot {
     max-height: 305px;
+  }
+
+  .v5-journey-list {
+    padding-top: 70px;
   }
 
   .v5-journey-item {
