@@ -366,6 +366,30 @@ const segmentData = {
     flow: ['Demanda', 'Detalhes', 'Dúvidas', 'Orçamento', 'Próximo passo', 'Follow-up'],
     example: 'Cliente pede orçamento. A Korax entende a demanda, coleta o necessário, responde dúvidas e conduz para o próximo passo sem deixar o lead parado.'
   },
+  concessionarias: {
+    label: 'Concessionárias', icon: Building2,
+    headline: 'Do “tem esse carro?” até o test-drive com vendedor e contexto prontos.',
+    flow: ['Modelo de interesse', 'Faixa de entrada', 'Troca / usado', 'Qualificação', 'Test-drive', 'Vendedor'],
+    example: 'O lead chama perguntando por um veículo específico. A Korax identifica modelo, versão, intenção de compra, possibilidade de troca e faixa de entrada, responde dúvidas iniciais, sugere horários para test-drive e entrega a oportunidade ao vendedor com todo o histórico organizado.'
+  },
+  ecommerce: {
+    label: 'Lojas e e-commerce', icon: Store,
+    headline: 'Da dúvida sobre o produto até a compra — sem abandonar o cliente no meio.',
+    flow: ['Produto', 'Dúvidas', 'Disponibilidade', 'Recomendação', 'Compra', 'Pós-venda'],
+    example: 'O cliente pergunta tamanho, variação, disponibilidade ou prazo. A Korax responde usando as informações da operação, ajuda a escolher, conduz para a compra e continua disponível no pós-venda para dúvidas, status e novas oportunidades.'
+  },
+  escritorios: {
+    label: 'Escritórios e consultorias', icon: Layers3,
+    headline: 'Mais triagem e contexto antes do especialista assumir o atendimento.',
+    flow: ['Necessidade', 'Triagem', 'Dados essenciais', 'Qualificação', 'Reunião', 'Especialista'],
+    example: 'Um potencial cliente chega sem saber exatamente qual serviço precisa. A Korax entende o cenário, coleta as informações essenciais, identifica o tipo de demanda, agenda uma conversa quando fizer sentido e entrega ao especialista um resumo claro do caso.'
+  },
+  logistica: {
+    label: 'Transportadoras e logística', icon: Route,
+    headline: 'Da primeira solicitação de frete até uma demanda pronta para cotação e acompanhamento.',
+    flow: ['Origem e destino', 'Carga', 'Prazo', 'Dados da operação', 'Cotação', 'Follow-up'],
+    example: 'O cliente pede um frete. A Korax coleta origem, destino, tipo de carga, volume, prazo e informações necessárias, organiza a solicitação para o comercial, registra a oportunidade e faz o acompanhamento caso o cliente pare de responder.'
+  },
 }
 
 function Segments() {
