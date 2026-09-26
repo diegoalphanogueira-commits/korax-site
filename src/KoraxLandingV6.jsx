@@ -6,13 +6,6 @@ import KoraxLandingV5Plus from './KoraxLandingV5Plus.jsx'
 const ease = [0.22, 1, 0.36, 1]
 const WHATSAPP_URL = '#whatsapp-demo'
 
-function formatTime(value) {
-  if (!Number.isFinite(value) || value < 0) return '0:00'
-  const minutes = Math.floor(value / 60)
-  const seconds = Math.floor(value % 60).toString().padStart(2, '0')
-  return `${minutes}:${seconds}`
-}
-
 function V6Header() {
   return (
     <header className="v6-header">
@@ -147,14 +140,6 @@ function VSLPlayer() {
     }
   }
 
-  const seekVideo = (event) => {
-    const video = videoRef.current
-    if (!video) return
-    const nextTime = Number(event.target.value)
-    video.currentTime = nextTime
-    setCurrentTime(nextTime)
-  }
-
   const progress = duration > 0 ? Math.min(100, Math.max(0, (currentTime / duration) * 100)) : 0
 
   return (
@@ -212,20 +197,17 @@ function VSLPlayer() {
       </div>
 
       {!missing && (
-        <div className="v6-progress-row">
-          <span>{formatTime(currentTime)}</span>
-          <input
-            className="v6-progress"
-            type="range"
-            min="0"
-            max={duration || 0.1}
-            step="0.1"
-            value={Math.min(currentTime, duration || 0)}
-            onChange={seekVideo}
-            aria-label="Progresso do vídeo"
-            style={{ '--v6-progress': `${progress}%` }}
-          />
-          <span>{formatTime(duration)}</span>
+        <div
+          className="v6-progress-visual"
+          role="progressbar"
+          aria-label="Progresso da apresentação"
+          aria-valuemin="0"
+          aria-valuemax="100"
+          aria-valuenow={Math.round(progress)}
+        >
+          <div className="v6-progress-fill" style={{ width: `${progress}%` }}>
+            <span />
+          </div>
         </div>
       )}
 
