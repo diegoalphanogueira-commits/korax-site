@@ -6,11 +6,13 @@ import FounderSectionPatch from './FounderSectionPatch.jsx'
 import CasesCopyPatch from './CasesCopyPatch.jsx'
 import PainCopyPatch from './PainCopyPatch.jsx'
 import PainConversationPatch from './PainConversationPatch.jsx'
+import PainFifthStepPatch from './PainFifthStepPatch.jsx'
 import './korax-landing-v5.css'
 import './v5plus-authority-footer.css'
 import './korax-landing-v6.css'
 import './pain-premium.css'
 import './pain-whatsapp-live.css'
+import './pain-fifth-step.css'
 import './frustration-premium.css'
 import './frustration-desktop-fix.css'
 import './training-desktop-fix.css'
@@ -26,5 +28,6 @@ ReactDOM.createRoot(document.getElementById('root')).render(
     <CasesCopyPatch />
     <PainCopyPatch />
     <PainConversationPatch />
+    <PainFifthStepPatch />
   </React.StrictMode>,
 )
