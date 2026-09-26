@@ -1,0 +1,227 @@
+/* Animated WhatsApp-style delay scenario */
+.v5-pain-visual.pain-whatsapp-live{
+  position:sticky;
+  top:104px;
+  min-height:0;
+  padding:0;
+  border-radius:28px;
+  overflow:hidden;
+  background:#07163c;
+}
+
+.v5-pain-visual.pain-whatsapp-live::after{display:none}
+.v5-pain-visual.pain-whatsapp-live::before{
+  width:260px;
+  height:260px;
+  right:-105px;
+  bottom:-110px;
+  background:radial-gradient(circle,rgba(52,127,255,.20),transparent 68%);
+}
+
+.pw-chat-shell{
+  position:relative;
+  z-index:1;
+  min-height:560px;
+  display:flex;
+  flex-direction:column;
+  background:
+    radial-gradient(circle at 90% 3%,rgba(48,126,255,.22),transparent 30%),
+    linear-gradient(155deg,#081b4c 0%,#06143a 58%,#04102f 100%);
+}
+
+.pw-chat-header{
+  display:flex;
+  align-items:center;
+  gap:12px;
+  padding:18px 20px;
+  border-bottom:1px solid rgba(255,255,255,.08);
+  background:rgba(4,15,45,.68);
+  backdrop-filter:blur(10px);
+}
+
+.pw-avatar{
+  flex:0 0 auto;
+  display:grid;
+  place-items:center;
+  width:38px;
+  height:38px;
+  border-radius:50%;
+  background:linear-gradient(145deg,#2b76ff,#1659d5);
+  color:#fff;
+  font-size:14px;
+  font-weight:900;
+  box-shadow:0 8px 20px rgba(36,103,237,.28);
+}
+
+.pw-chat-person{display:flex;flex-direction:column;gap:2px;min-width:0}
+.pw-chat-person strong{color:#fff;font-size:14px;line-height:1.1}
+.pw-chat-person span{color:#8fa6d7;font-size:10px}
+
+.pw-status-wrap{margin-left:auto;position:relative;min-width:132px;height:28px}
+.pw-status{
+  position:absolute;
+  inset:0 0 auto auto;
+  display:inline-flex;
+  align-items:center;
+  justify-content:center;
+  gap:6px;
+  min-height:28px;
+  padding:0 9px;
+  border-radius:999px;
+  border:1px solid rgba(255,255,255,.09);
+  background:rgba(255,255,255,.05);
+  color:#93a8d5;
+  font-size:8px;
+  font-weight:900;
+  letter-spacing:.08em;
+  text-transform:uppercase;
+  white-space:nowrap;
+}
+.pw-status i{width:6px;height:6px;border-radius:50%;background:#f9c74f;box-shadow:0 0 0 4px rgba(249,199,79,.08)}
+.pw-status-late{opacity:0;color:#ffb2bd;border-color:rgba(255,103,126,.20);background:rgba(130,31,50,.18)}
+
+.pw-chat-body{
+  position:relative;
+  flex:1;
+  display:flex;
+  flex-direction:column;
+  gap:10px;
+  padding:18px 20px 16px;
+  background:
+    linear-gradient(rgba(255,255,255,.012),rgba(255,255,255,.012)),
+    radial-gradient(circle at 18% 16%,rgba(77,148,255,.06),transparent 26%);
+}
+
+.pw-day{
+  align-self:center;
+  padding:5px 9px;
+  border-radius:8px;
+  background:rgba(255,255,255,.06);
+  color:#8da2cf;
+  font-size:9px;
+  font-weight:700;
+}
+
+.pw-message{
+  position:relative;
+  max-width:82%;
+  padding:11px 13px 16px;
+  border-radius:13px;
+  box-shadow:0 8px 20px rgba(0,0,0,.10);
+}
+.pw-message p{margin:0;color:#eef4ff;font-size:12.5px;line-height:1.48}
+.pw-message small{
+  position:absolute;
+  right:9px;
+  bottom:5px;
+  color:#8296c0;
+  font-size:8px;
+  line-height:1;
+}
+.pw-message small b{color:#7fc7ff;font-weight:800}
+
+.pw-message.incoming{
+  align-self:flex-start;
+  border:1px solid rgba(255,255,255,.08);
+  border-top-left-radius:4px;
+  background:linear-gradient(145deg,rgba(255,255,255,.105),rgba(255,255,255,.065));
+}
+.pw-message.outgoing{
+  align-self:flex-end;
+  border:1px solid rgba(53,221,160,.18);
+  border-top-right-radius:4px;
+  background:linear-gradient(145deg,#0d684e,#0a5943);
+}
+.pw-message.outgoing p{color:#ecfff8}
+.pw-message.outgoing small{color:#b8e9d7}
+
+.pw-second{max-width:63%}
+.pw-lost{
+  border-color:rgba(255,101,123,.22)!important;
+  background:linear-gradient(145deg,rgba(128,28,49,.42),rgba(75,21,38,.34))!important;
+}
+.pw-lost p{color:#ffc6cf}
+
+.pw-wait{
+  display:grid;
+  grid-template-columns:44px 1fr;
+  align-items:center;
+  gap:9px;
+  width:100%;
+  padding:2px 0;
+}
+.pw-wait>span{color:#7087b5;font-size:9px;font-weight:800}
+.pw-wait>div{height:3px;border-radius:999px;overflow:hidden;background:rgba(255,255,255,.07)}
+.pw-wait>div>i{
+  display:block;
+  width:0;
+  height:100%;
+  border-radius:inherit;
+  background:linear-gradient(90deg,#2f74ff,#61d3ff);
+  box-shadow:0 0 12px rgba(66,150,255,.30);
+}
+
+.pw-result{
+  margin:0 20px 20px;
+  padding:17px 0 0;
+  border-top:1px solid rgba(255,255,255,.09);
+  display:flex;
+  flex-direction:column;
+  gap:4px;
+}
+.pw-result strong{color:#fff;font-size:21px;line-height:1.15;letter-spacing:-.025em}
+.pw-result span{color:#91a5cf;font-size:12px}
+
+.pw-seq{opacity:0;transform:translateY(8px)}
+
+.pain-whatsapp-live.is-running .pw-second{animation:pwAppear .38s .8s ease forwards}
+.pain-whatsapp-live.is-running .pw-wait-1{animation:pwAppear .30s 1.35s ease forwards}
+.pain-whatsapp-live.is-running .pw-wait-2{animation:pwAppear .30s 2.10s ease forwards}
+.pain-whatsapp-live.is-running .pw-wait-3{animation:pwAppear .30s 2.85s ease forwards}
+.pain-whatsapp-live.is-running .pw-wait-1 i{animation:pwFill1 .75s 1.40s ease forwards}
+.pain-whatsapp-live.is-running .pw-wait-2 i{animation:pwFill2 .75s 2.15s ease forwards}
+.pain-whatsapp-live.is-running .pw-wait-3 i{animation:pwFill3 .80s 2.90s ease forwards}
+.pain-whatsapp-live.is-running .pw-company{animation:pwAppear .42s 3.95s ease forwards}
+.pain-whatsapp-live.is-running .pw-lost{animation:pwAppear .42s 5.05s ease forwards}
+.pain-whatsapp-live.is-running .pw-result{animation:pwAppear .42s 5.75s ease forwards}
+.pain-whatsapp-live.is-running .pw-status-waiting{animation:pwStatusOut .28s 3.78s ease forwards}
+.pain-whatsapp-live.is-running .pw-status-late{animation:pwStatusIn .32s 4.02s ease forwards}
+
+@keyframes pwAppear{to{opacity:1;transform:translateY(0)}}
+@keyframes pwFill1{to{width:28%}}
+@keyframes pwFill2{to{width:58%}}
+@keyframes pwFill3{to{width:94%}}
+@keyframes pwStatusOut{to{opacity:0;transform:translateY(-4px)}}
+@keyframes pwStatusIn{to{opacity:1;transform:translateY(0)}}
+
+@media(max-width:980px){
+  .v5-pain-visual.pain-whatsapp-live{position:relative;top:auto}
+}
+
+@media(max-width:680px){
+  .v5-pain-visual.pain-whatsapp-live{margin-top:7px;border-radius:22px}
+  .pw-chat-shell{min-height:500px}
+  .pw-chat-header{padding:15px 15px;gap:10px}
+  .pw-avatar{width:34px;height:34px;font-size:12px}
+  .pw-chat-person strong{font-size:13px}
+  .pw-chat-person span{font-size:9px}
+  .pw-status-wrap{min-width:112px;height:25px}
+  .pw-status{min-height:25px;padding:0 7px;font-size:7px}
+  .pw-chat-body{padding:15px 15px 13px;gap:9px}
+  .pw-message{max-width:88%;padding:10px 11px 15px;border-radius:12px}
+  .pw-message p{font-size:11.5px;line-height:1.46}
+  .pw-second{max-width:68%}
+  .pw-wait{grid-template-columns:40px 1fr;gap:8px}
+  .pw-wait>span{font-size:8px}
+  .pw-result{margin:0 15px 16px;padding-top:15px}
+  .pw-result strong{font-size:19px}
+  .pw-result span{font-size:11px}
+}
+
+@media(prefers-reduced-motion:reduce){
+  .pw-seq,.pw-status-late{opacity:1;transform:none}
+  .pw-status-waiting{display:none}
+  .pw-wait-1 i{width:28%}
+  .pw-wait-2 i{width:58%}
+  .pw-wait-3 i{width:94%}
+}
