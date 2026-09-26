@@ -37,39 +37,98 @@ function VSLPlayer() {
     if (!video) return
 
     let cancelled = false
+    let unlocked = false
 
-    async function startVideo() {
+    const markPlaying = (isMuted) => {
+      if (cancelled) return
+      setMuted(isMuted)
+      setStarted(true)
+    }
+
+    const playMuted = async () => {
       try {
-        video.muted = false
+        video.muted = true
+        video.defaultMuted = true
+        video.volume = 1
         await video.play()
-        if (!cancelled) {
-          setMuted(false)
-          setStarted(true)
-        }
+        markPlaying(true)
       } catch {
-        try {
-          video.muted = true
-          await video.play()
-          if (!cancelled) {
-            setMuted(true)
-            setStarted(true)
-          }
-        } catch {
-          if (!cancelled) setStarted(false)
-        }
+        if (!cancelled) setStarted(false)
       }
     }
 
-    startVideo()
-    return () => { cancelled = true }
+    const tryAudibleAutoplay = async () => {
+      try {
+        video.muted = false
+        video.defaultMuted = false
+        video.volume = 1
+        await video.play()
+        unlocked = true
+        markPlaying(false)
+      } catch {
+        await playMuted()
+      }
+    }
+
+    const unlockOnFirstInteraction = async () => {
+      if (cancelled || unlocked || !videoRef.current) return
+
+      const rect = video.getBoundingClientRect()
+      const videoIsVisible = rect.bottom > 0 && rect.top < window.innerHeight
+      if (!videoIsVisible) return
+
+      try {
+        video.muted = false
+        video.defaultMuted = false
+        video.volume = 1
+        await video.play()
+        unlocked = true
+        markPlaying(false)
+        removeUnlockListeners()
+      } catch {
+        video.muted = true
+        video.defaultMuted = true
+        setMuted(true)
+        try { await video.play(); setStarted(true) } catch {}
+      }
+    }
+
+    const removeUnlockListeners = () => {
+      window.removeEventListener('pointerdown', unlockOnFirstInteraction, true)
+      window.removeEventListener('keydown', unlockOnFirstInteraction, true)
+    }
+
+    // Primeiro tenta tocar com áudio. Se o navegador bloquear, mantém o vídeo rodando mudo.
+    tryAudibleAutoplay()
+
+    // Assim que houver a primeira interação válida com a página, tenta liberar o áudio
+    // sem exigir um segundo clique no player.
+    window.addEventListener('pointerdown', unlockOnFirstInteraction, true)
+    window.addEventListener('keydown', unlockOnFirstInteraction, true)
+
+    return () => {
+      cancelled = true
+      removeUnlockListeners()
+    }
   }, [])
 
   const enableSound = async () => {
     const video = videoRef.current
     if (!video) return
+
     video.muted = false
-    setMuted(false)
-    try { await video.play(); setStarted(true) } catch {}
+    video.defaultMuted = false
+    video.volume = 1
+
+    try {
+      await video.play()
+      setMuted(false)
+      setStarted(true)
+    } catch {
+      video.muted = true
+      video.defaultMuted = true
+      setMuted(true)
+    }
   }
 
   const togglePlayback = async () => {
@@ -96,10 +155,16 @@ function VSLPlayer() {
             ref={videoRef}
             className="v6-video"
             src="/media/vsl/korax-vsl.mp4"
+            autoPlay
+            muted={muted}
             playsInline
-            preload="metadata"
+            preload="auto"
             poster="/media/vsl/korax-vsl-poster.webp"
             onLoadedData={() => setMissing(false)}
+            onCanPlay={() => {
+              const video = videoRef.current
+              if (video?.paused) video.play().catch(() => {})
+            }}
             onError={() => setMissing(true)}
             onPlay={() => setStarted(true)}
             onPause={() => setStarted(false)}
@@ -116,7 +181,7 @@ function VSLPlayer() {
         {!missing && muted && (
           <button className="v6-unmute" type="button" onClick={enableSound}>
             <span>🔊</span>
-            <div><strong>ATIVAR SOM</strong><small>toque para ouvir a apresentação</small></div>
+            <div><strong>OUVIR COM SOM</strong><small>1 toque para ativar o áudio</small></div>
           </button>
         )}
 
@@ -128,9 +193,9 @@ function VSLPlayer() {
       </div>
 
       <div className="v6-vsl-foot">
-        <span>Vídeo otimizado para desktop e celular</span>
+        <span>Reprodução automática quando o navegador permitir</span>
         <span>•</span>
-        <span>Sem redirecionar para YouTube</span>
+        <span>Áudio liberado na primeira interação possível</span>
       </div>
     </div>
   )
