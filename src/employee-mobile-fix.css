@@ -1,0 +1,18 @@
+/* Mobile-only refinement for the "funcionário digital" headline. */
+@media (max-width: 720px) {
+  .v5-employee .v5-section-head h2 {
+    max-width: 390px;
+    margin-left: auto;
+    margin-right: auto;
+    font-size: 32px;
+    line-height: 1.02;
+    letter-spacing: -.045em;
+    text-wrap: balance;
+  }
+
+  .v5-employee .v5-section-head h2 em {
+    display: block;
+    white-space: nowrap;
+    margin-top: 2px;
+  }
+}
