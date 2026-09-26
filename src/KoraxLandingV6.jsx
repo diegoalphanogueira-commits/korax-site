@@ -6,6 +6,13 @@ import KoraxLandingV5Plus from './KoraxLandingV5Plus.jsx'
 const ease = [0.22, 1, 0.36, 1]
 const WHATSAPP_URL = '#whatsapp-demo'
 
+function formatTime(value) {
+  if (!Number.isFinite(value) || value < 0) return '0:00'
+  const minutes = Math.floor(value / 60)
+  const seconds = Math.floor(value % 60).toString().padStart(2, '0')
+  return `${minutes}:${seconds}`
+}
+
 function V6Header() {
   return (
     <header className="v6-header">
@@ -31,6 +38,8 @@ function VSLPlayer() {
   const [muted, setMuted] = useState(true)
   const [missing, setMissing] = useState(false)
   const [started, setStarted] = useState(false)
+  const [currentTime, setCurrentTime] = useState(0)
+  const [duration, setDuration] = useState(0)
 
   useEffect(() => {
     const video = videoRef.current
@@ -98,11 +107,7 @@ function VSLPlayer() {
       window.removeEventListener('keydown', unlockOnFirstInteraction, true)
     }
 
-    // Primeiro tenta tocar com áudio. Se o navegador bloquear, mantém o vídeo rodando mudo.
     tryAudibleAutoplay()
-
-    // Assim que houver a primeira interação válida com a página, tenta liberar o áudio
-    // sem exigir um segundo clique no player.
     window.addEventListener('pointerdown', unlockOnFirstInteraction, true)
     window.addEventListener('keydown', unlockOnFirstInteraction, true)
 
@@ -142,6 +147,16 @@ function VSLPlayer() {
     }
   }
 
+  const seekVideo = (event) => {
+    const video = videoRef.current
+    if (!video) return
+    const nextTime = Number(event.target.value)
+    video.currentTime = nextTime
+    setCurrentTime(nextTime)
+  }
+
+  const progress = duration > 0 ? Math.min(100, Math.max(0, (currentTime / duration) * 100)) : 0
+
   return (
     <div className="v6-vsl-frame">
       <div className="v6-vsl-topline">
@@ -161,6 +176,9 @@ function VSLPlayer() {
             preload="auto"
             poster="/media/vsl/korax-vsl-poster.webp"
             onLoadedData={() => setMissing(false)}
+            onLoadedMetadata={(event) => setDuration(event.currentTarget.duration || 0)}
+            onDurationChange={(event) => setDuration(event.currentTarget.duration || 0)}
+            onTimeUpdate={(event) => setCurrentTime(event.currentTarget.currentTime || 0)}
             onCanPlay={() => {
               const video = videoRef.current
               if (video?.paused) video.play().catch(() => {})
@@ -168,6 +186,7 @@ function VSLPlayer() {
             onError={() => setMissing(true)}
             onPlay={() => setStarted(true)}
             onPause={() => setStarted(false)}
+            onEnded={() => setStarted(false)}
           />
         ) : (
           <div className="v6-video-placeholder">
@@ -192,6 +211,24 @@ function VSLPlayer() {
         )}
       </div>
 
+      {!missing && (
+        <div className="v6-progress-row">
+          <span>{formatTime(currentTime)}</span>
+          <input
+            className="v6-progress"
+            type="range"
+            min="0"
+            max={duration || 0.1}
+            step="0.1"
+            value={Math.min(currentTime, duration || 0)}
+            onChange={seekVideo}
+            aria-label="Progresso do vídeo"
+            style={{ '--v6-progress': `${progress}%` }}
+          />
+          <span>{formatTime(duration)}</span>
+        </div>
+      )}
+
       <div className="v6-vsl-foot">
         <span>Reprodução automática quando o navegador permitir</span>
         <span>•</span>
@@ -202,6 +239,22 @@ function VSLPlayer() {
 }
 
 function V6Hero() {
+  const scrollToVsl = (event) => {
+    event.preventDefault()
+    const target = document.getElementById('vsl')
+    if (!target) return
+
+    const header = document.querySelector('.v6-header')
+    const headerHeight = header?.getBoundingClientRect().height || 0
+    const targetTop = target.getBoundingClientRect().top + window.scrollY
+    const offset = window.innerWidth <= 680 ? 10 : 18
+
+    window.scrollTo({
+      top: Math.max(0, targetTop - headerHeight - offset),
+      behavior: 'smooth',
+    })
+  }
+
   return (
     <section className="v6-hero" id="inicio">
       <div className="v6-grid-bg" />
@@ -219,7 +272,7 @@ function V6Hero() {
           </p>
           <div className="v6-actions">
             <a className="v6-btn primary" href={WHATSAPP_URL}><MessageCircle size={18} /> Testar a Korax no WhatsApp <ArrowRight size={18} /></a>
-            <a className="v6-btn secondary" href="#vsl"><ChevronDown size={17} /> Assistir apresentação</a>
+            <button className="v6-btn secondary" type="button" onClick={scrollToVsl}><ChevronDown size={17} /> Assistir apresentação</button>
           </div>
           <div className="v6-proof">
             <span>Atendimento 24h</span><i />
