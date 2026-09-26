@@ -13,16 +13,16 @@ export default function FounderSectionPatch() {
     const paragraphs = section.querySelectorAll('.v5plus-founder-copy > p')
 
     if (paragraphs[0]) {
-      paragraphs[0].textContent = 'Atuo na interseção entre vendas, atendimento e tecnologia, estruturando jornadas comerciais que transformam conversas no WhatsApp em próximos passos claros.'
+      paragraphs[0].textContent = 'Atuo na interseção entre vendas, atendimento e tecnologia. Estruturo jornadas comerciais para transformar conversas no WhatsApp em atendimento, oportunidades e próximos passos claros.'
     }
 
     if (paragraphs[1]) {
-      paragraphs[1].textContent = 'A Korax nasceu dessa prática: entender onde o atendimento trava, organizar o processo e treinar a IA para conduzir cada cliente com contexto, velocidade e direção comercial.'
+      paragraphs[1].textContent = 'A Korax nasceu dessa experiência: entender onde a operação trava, organizar o processo e treinar a IA para atender com contexto, velocidade e direção comercial.'
     }
 
     const thesis = section.querySelector('.v5plus-founder-thesis strong')
     if (thesis) {
-      thesis.textContent = 'Tecnologia sem processo só automatiza bagunça. Primeiro organizamos a operação. Depois treinamos a IA para trabalhar dentro dela.'
+      thesis.textContent = 'Tecnologia sem processo só automatiza bagunça. Primeiro organizamos a operação. Depois a IA aprende a trabalhar dentro dela.'
     }
   }, [])
 
