@@ -28,22 +28,23 @@
     letter-spacing: .14em;
   }
 
-  /* Keep the complete training proposition on one continuous line on desktop. */
+  /* Two-line proposition on desktop: statement first, blue promise below. */
   .v5-training-copy h2 {
-    width: calc(200% + 56px);
-    max-width: none;
+    width: min(620px, calc(100vw - 96px));
+    max-width: 620px;
     margin: 16px 0 22px;
-    font-size: clamp(32px, 2.55vw, 36px);
-    line-height: 1.08;
+    font-size: clamp(32px, 2.45vw, 35px);
+    line-height: 1.07;
     letter-spacing: -.04em;
-    white-space: nowrap;
-    text-wrap: nowrap;
+    white-space: normal;
+    text-wrap: balance;
   }
 
   .v5-training-copy h2 em {
-    display: inline;
-    margin: 0;
+    display: block;
+    margin-top: 6px;
     line-height: inherit;
+    white-space: nowrap;
   }
 
   .v5-training-copy > p {
@@ -66,11 +67,10 @@
     object-position: center;
   }
 
-  /* Leave breathing room for the headline that visually spans both columns. */
   .v5-journey-list {
     gap: 10px;
     align-content: start;
-    padding-top: 66px;
+    padding-top: 0;
   }
 
   .v5-journey-item {
@@ -134,8 +134,9 @@
   }
 
   .v5-training-copy h2 {
-    width: calc(200% + 62px);
-    font-size: 38px;
+    width: 650px;
+    max-width: 650px;
+    font-size: 36px;
   }
 
   .v5-training-copy .v5-image-slot {
@@ -143,7 +144,7 @@
   }
 
   .v5-journey-list {
-    padding-top: 70px;
+    padding-top: 0;
   }
 
   .v5-journey-item {
