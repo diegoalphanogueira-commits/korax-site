@@ -14,7 +14,7 @@ export default function PainFifthStepPatch() {
     <article className="v5-pain-item v5-pain-item-paid">
       <span>05</span>
       <div>
-        <strong>Você paga para trazer. O concorrente fecha.</strong>
+        <strong>Você traz. Outro fecha.</strong>
         <p>O lead chegou pelo seu anúncio, mas a demora no WhatsApp transforma seu investimento em oportunidade para outra empresa.</p>
       </div>
     </article>,
