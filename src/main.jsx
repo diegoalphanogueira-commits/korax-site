@@ -9,6 +9,7 @@ import './pain-premium.css'
 import './frustration-premium.css'
 import './frustration-desktop-fix.css'
 import './training-desktop-fix.css'
+import './employee-mobile-fix.css'
 
 ReactDOM.createRoot(document.getElementById('root')).render(
   <React.StrictMode>
