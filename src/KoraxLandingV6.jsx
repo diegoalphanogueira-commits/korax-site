@@ -95,16 +95,15 @@ function VSLPlayer() {
           <video
             ref={videoRef}
             className="v6-video"
+            src="/media/vsl/korax-vsl.mp4"
             playsInline
             preload="metadata"
             poster="/media/vsl/korax-vsl-poster.webp"
+            onLoadedData={() => setMissing(false)}
             onError={() => setMissing(true)}
             onPlay={() => setStarted(true)}
             onPause={() => setStarted(false)}
-          >
-            <source src="/media/vsl/korax-vsl.webm" type="video/webm" />
-            <source src="/media/vsl/korax-vsl.mp4" type="video/mp4" />
-          </video>
+          />
         ) : (
           <div className="v6-video-placeholder">
             <span>VSL</span>
