@@ -4,6 +4,7 @@ import KoraxLandingV6 from './KoraxLandingV6.jsx'
 import TrainingCopyPatch from './TrainingCopyPatch.jsx'
 import FounderSectionPatch from './FounderSectionPatch.jsx'
 import CasesCopyPatch from './CasesCopyPatch.jsx'
+import PainCopyPatch from './PainCopyPatch.jsx'
 import './korax-landing-v5.css'
 import './v5plus-authority-footer.css'
 import './korax-landing-v6.css'
@@ -21,5 +22,6 @@ ReactDOM.createRoot(document.getElementById('root')).render(
     <TrainingCopyPatch />
     <FounderSectionPatch />
     <CasesCopyPatch />
+    <PainCopyPatch />
   </React.StrictMode>,
 )
