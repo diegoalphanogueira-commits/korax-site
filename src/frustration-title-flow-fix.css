@@ -1,0 +1,18 @@
+/* Keep the IA section headline in one continuous flow on mobile. */
+@media (max-width: 680px) {
+  .korax-commercial-v2 .v5-frustration-copy h2 {
+    width: 100%;
+    max-width: 100%;
+    text-align: left;
+    text-wrap: pretty;
+    overflow-wrap: normal;
+    word-break: normal;
+  }
+
+  .korax-commercial-v2 .v5-frustration-copy h2 em {
+    display: inline;
+    margin: 0;
+    white-space: normal;
+    font-style: normal;
+  }
+}
