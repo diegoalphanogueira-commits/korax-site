@@ -25,6 +25,7 @@ import './founder-refinement.css'
 import './commercial-narrative-v2.css'
 import './hero-narrative-refinement.css'
 import './operation-section-refinement.css'
+import './frustration-title-inline-fix.css'
 
 ReactDOM.createRoot(document.getElementById('root')).render(
   <React.StrictMode>
