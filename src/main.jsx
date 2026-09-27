@@ -10,6 +10,7 @@ import PainFifthStepPatch from './PainFifthStepPatch.jsx'
 import CommercialNarrativePatch from './CommercialNarrativePatch.jsx'
 import HeroNarrativeRefinement from './HeroNarrativeRefinement.jsx'
 import OperationSectionRefinement from './OperationSectionRefinement.jsx'
+import FounderAuthorityPatch from './FounderAuthorityPatch.jsx'
 import './korax-landing-v5.css'
 import './v5plus-authority-footer.css'
 import './korax-landing-v6.css'
@@ -26,6 +27,7 @@ import './commercial-narrative-v2.css'
 import './hero-narrative-refinement.css'
 import './operation-section-refinement.css'
 import './frustration-title-inline-fix.css'
+import './founder-authority-v2.css'
 
 ReactDOM.createRoot(document.getElementById('root')).render(
   <React.StrictMode>
@@ -39,5 +41,6 @@ ReactDOM.createRoot(document.getElementById('root')).render(
     <CommercialNarrativePatch />
     <HeroNarrativeRefinement />
     <OperationSectionRefinement />
+    <FounderAuthorityPatch />
   </React.StrictMode>,
 )
