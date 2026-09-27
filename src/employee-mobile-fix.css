@@ -28,7 +28,7 @@
   .korax-commercial-v2 .v5-employee .v5-section-head h2 {
     width: 100%;
     max-width: none;
-    margin: 0 0 20px;
+    margin: 0 0 18px;
     text-align: left;
     font-size: 39px;
     line-height: 1.035;
@@ -44,11 +44,14 @@
 
   .korax-commercial-v2 .v5-employee .v5-section-head > p {
     width: 100%;
-    max-width: none;
+    max-width: 37ch;
     margin: 0;
+    padding: 0;
     text-align: left;
-    font-size: 18px;
-    line-height: 1.55;
+    font-size: 17px;
+    line-height: 1.52;
+    color: #68758f;
+    text-wrap: pretty;
   }
 
   .korax-commercial-v2 .v5-employee .v5-capability-grid {
@@ -79,6 +82,8 @@
   }
 
   .korax-commercial-v2 .v5-employee .v5-section-head > p {
-    font-size: 17px;
+    max-width: 100%;
+    font-size: 16px;
+    line-height: 1.5;
   }
 }
