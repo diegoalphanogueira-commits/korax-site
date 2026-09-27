@@ -8,7 +8,7 @@ export default function HeroNarrativeRefinement() {
 
       const title = document.querySelector('.v6-hero h1')
       if (title) {
-        title.innerHTML = '<span>Seu WhatsApp já faz parte do comercial.</span><em>A Korax organiza a operação.</em>'
+        title.innerHTML = '<span>Seu WhatsApp já faz parte do comercial.</span> <em>A Korax organiza a operação.</em>'
       }
 
       const lead = document.querySelector('.v6-hero-copy > p')
