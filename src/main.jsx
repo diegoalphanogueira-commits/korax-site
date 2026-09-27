@@ -8,6 +8,7 @@ import PainCopyPatch from './PainCopyPatch.jsx'
 import PainConversationPatch from './PainConversationPatch.jsx'
 import PainFifthStepPatch from './PainFifthStepPatch.jsx'
 import CommercialNarrativePatch from './CommercialNarrativePatch.jsx'
+import HeroNarrativeRefinement from './HeroNarrativeRefinement.jsx'
 import './korax-landing-v5.css'
 import './v5plus-authority-footer.css'
 import './korax-landing-v6.css'
@@ -21,6 +22,7 @@ import './employee-mobile-fix.css'
 import './segments-mobile-fix.css'
 import './founder-refinement.css'
 import './commercial-narrative-v2.css'
+import './hero-narrative-refinement.css'
 
 ReactDOM.createRoot(document.getElementById('root')).render(
   <React.StrictMode>
@@ -32,5 +34,6 @@ ReactDOM.createRoot(document.getElementById('root')).render(
     <PainConversationPatch />
     <PainFifthStepPatch />
     <CommercialNarrativePatch />
+    <HeroNarrativeRefinement />
   </React.StrictMode>,
 )
