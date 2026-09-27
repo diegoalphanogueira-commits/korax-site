@@ -20,13 +20,14 @@
 
 @media(max-width:680px){
   .korax-commercial-v2 .v6-hero{padding-top:44px;padding-bottom:44px}
-  .korax-commercial-v2 .v6-hero-copy{width:100%;max-width:none;padding-left:24px;padding-right:24px;text-align:left}
+  .korax-commercial-v2 .v6-hero-copy{width:100%;max-width:none;padding-left:24px;padding-right:24px;text-align:center}
 
   .korax-commercial-v2 .v6-kicker{
+    width:max-content;
     max-width:100%;
-    margin:0;
-    justify-content:flex-start;
-    text-align:left;
+    margin:0 auto;
+    justify-content:center;
+    text-align:center;
     padding:8px 10px;
     font-size:8px;
     line-height:1.3;
@@ -37,8 +38,8 @@
   .korax-commercial-v2 .v6-hero h1{
     width:100%;
     max-width:none;
-    margin:20px 0 17px;
-    text-align:left;
+    margin:20px auto 17px;
+    text-align:center;
     font-size:37px;
     line-height:1.01;
     letter-spacing:-.043em;
@@ -56,9 +57,9 @@
 
   .korax-commercial-v2 .v6-hero-copy>p{
     width:100%;
-    max-width:100%;
-    margin:0;
-    text-align:left;
+    max-width:36ch;
+    margin:0 auto;
+    text-align:center;
     font-size:16px;
     line-height:1.5;
     letter-spacing:-.01em;
@@ -75,6 +76,6 @@
 @media(max-width:390px){
   .korax-commercial-v2 .v6-hero-copy{padding-left:20px;padding-right:20px}
   .korax-commercial-v2 .v6-hero h1{font-size:35px;line-height:1.015;letter-spacing:-.04em}
-  .korax-commercial-v2 .v6-hero-copy>p{font-size:15.5px;line-height:1.5}
+  .korax-commercial-v2 .v6-hero-copy>p{font-size:15.5px;line-height:1.5;max-width:34ch}
   .korax-commercial-v2 .v6-proof span{font-size:8.8px}
 }
