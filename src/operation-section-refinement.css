@@ -152,6 +152,24 @@
     font-size:16px;
     line-height:1.22;
   }
+
+  /* Keep section subtitle locked to the same left-aligned mobile grid as the title. */
+  .korax-commercial-v2 .v5-employee .v5-section-head.centered{
+    align-items:flex-start;
+    text-align:left;
+  }
+
+  .korax-commercial-v2 .v5-employee .v5-section-head.centered>p{
+    width:100%;
+    max-width:none;
+    margin:0;
+    padding:0;
+    text-align:left;
+    font-size:17px;
+    line-height:1.52;
+    color:#68758f;
+    text-wrap:pretty;
+  }
 }
 
 @media(max-width:390px){
@@ -167,5 +185,10 @@
   .korax-commercial-v2 .v5-capability>span{
     width:42px;
     height:42px;
+  }
+
+  .korax-commercial-v2 .v5-employee .v5-section-head.centered>p{
+    font-size:16px;
+    line-height:1.5;
   }
 }
