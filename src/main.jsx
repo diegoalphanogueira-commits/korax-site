@@ -11,6 +11,7 @@ import CommercialNarrativePatch from './CommercialNarrativePatch.jsx'
 import HeroNarrativeRefinement from './HeroNarrativeRefinement.jsx'
 import OperationSectionRefinement from './OperationSectionRefinement.jsx'
 import FounderAuthorityPatch from './FounderAuthorityPatch.jsx'
+import ConversionFlowPatch from './ConversionFlowPatch.jsx'
 import './korax-landing-v5.css'
 import './v5plus-authority-footer.css'
 import './korax-landing-v6.css'
@@ -28,6 +29,7 @@ import './hero-narrative-refinement.css'
 import './operation-section-refinement.css'
 import './frustration-title-inline-fix.css'
 import './founder-authority-v2.css'
+import './conversion-flow.css'
 
 ReactDOM.createRoot(document.getElementById('root')).render(
   <React.StrictMode>
@@ -42,5 +44,6 @@ ReactDOM.createRoot(document.getElementById('root')).render(
     <HeroNarrativeRefinement />
     <OperationSectionRefinement />
     <FounderAuthorityPatch />
+    <ConversionFlowPatch />
   </React.StrictMode>,
 )
