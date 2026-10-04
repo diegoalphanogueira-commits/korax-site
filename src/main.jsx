@@ -14,6 +14,7 @@ import ConversionConsistencyPatch from './ConversionConsistencyPatch.jsx'
 import FounderFinalCopyPatch from './FounderFinalCopyPatch.jsx'
 import FaqStructurePatch from './FaqStructurePatch.jsx'
 import SectionOrderPatch from './SectionOrderPatch.jsx'
+import SocialLinksPatch from './SocialLinksPatch.jsx'
 import './korax-landing-v5.css'
 import './v5plus-authority-footer.css'
 import './korax-landing-v6.css'
@@ -51,5 +52,6 @@ ReactDOM.createRoot(document.getElementById('root')).render(
     <FounderFinalCopyPatch />
     <FaqStructurePatch />
     <SectionOrderPatch />
+    <SocialLinksPatch />
   </React.StrictMode>,
 )
