@@ -12,7 +12,7 @@ export default function FounderAuthorityPatch() {
 
     const title = section.querySelector('.v5plus-founder-copy h2')
     if (title) {
-      title.innerHTML = '<span>Diego Nogueira.</span><em>Marketing, estratégia comercial e tecnologia aplicada à operação.</em>'
+      title.innerHTML = '<span>Diego Nogueira.</span><em>+7 anos transformando conversas em vendas pelo WhatsApp.</em>'
     }
 
     const intro = section.querySelector('.v5plus-founder-intro')
