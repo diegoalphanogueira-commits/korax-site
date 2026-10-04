@@ -11,6 +11,7 @@ import HeroNarrativeRefinement from './HeroNarrativeRefinement.jsx'
 import OperationSectionRefinement from './OperationSectionRefinement.jsx'
 import ConversionFlowPatch from './ConversionFlowPatch.jsx'
 import ConversionConsistencyPatch from './ConversionConsistencyPatch.jsx'
+import FounderFinalCopyPatch from './FounderFinalCopyPatch.jsx'
 import './korax-landing-v5.css'
 import './v5plus-authority-footer.css'
 import './korax-landing-v6.css'
@@ -44,5 +45,6 @@ ReactDOM.createRoot(document.getElementById('root')).render(
     <OperationSectionRefinement />
     <ConversionFlowPatch />
     <ConversionConsistencyPatch />
+    <FounderFinalCopyPatch />
   </React.StrictMode>,
 )
