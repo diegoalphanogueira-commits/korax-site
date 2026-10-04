@@ -8,13 +8,6 @@ const INSTAGRAM_ICON = `
   </svg>
 `
 
-const YOUTUBE_ICON = `
-  <svg viewBox="0 0 24 24" aria-hidden="true">
-    <path d="M21.2 7.1a3 3 0 0 0-2.1-2.1C17.2 4.5 12 4.5 12 4.5s-5.2 0-7.1.5a3 3 0 0 0-2.1 2.1A31 31 0 0 0 2.3 12a31 31 0 0 0 .5 4.9A3 3 0 0 0 4.9 19c1.9.5 7.1.5 7.1.5s5.2 0 7.1-.5a3 3 0 0 0 2.1-2.1 31 31 0 0 0 .5-4.9 31 31 0 0 0-.5-4.9Z" fill="currentColor"/>
-    <path d="m10 15.3 5-3.3-5-3.3v6.6Z" fill="#fff"/>
-  </svg>
-`
-
 const SOCIALS = [
   {
     label: 'Instagram Diego Nogueira',
@@ -31,14 +24,6 @@ const SOCIALS = [
     handle: '@usekorax',
     icon: INSTAGRAM_ICON,
     className: 'instagram',
-  },
-  {
-    label: 'YouTube Korax',
-    href: 'https://www.youtube.com/@usekorax',
-    network: 'YouTube',
-    handle: '@usekorax',
-    icon: YOUTUBE_ICON,
-    className: 'youtube',
   },
 ]
 
@@ -97,10 +82,6 @@ function ensureStyles() {
       background:linear-gradient(135deg,#833ab4,#fd1d1d 58%,#fcb045);
       box-shadow:0 7px 18px rgba(225,48,108,.18);
     }
-    .v5plus-socials a.social-youtube .v5plus-social-icon{
-      background:#ff0033;
-      box-shadow:0 7px 18px rgba(255,0,51,.16);
-    }
     .v5plus-social-copy{
       min-width:0;
       display:flex;
@@ -122,7 +103,6 @@ function ensureStyles() {
     }
     @media(max-width:680px){
       .v5plus-socials{max-width:none;grid-template-columns:1fr 1fr!important;}
-      .v5plus-socials a:last-child{grid-column:1/-1;}
     }
   `
   document.head.appendChild(style)
