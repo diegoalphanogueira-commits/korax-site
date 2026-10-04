@@ -2,7 +2,6 @@ import React from 'react'
 import ReactDOM from 'react-dom/client'
 import KoraxLandingV6 from './KoraxLandingV6.jsx'
 import TrainingCopyPatch from './TrainingCopyPatch.jsx'
-import FounderSectionPatch from './FounderSectionPatch.jsx'
 import CasesCopyPatch from './CasesCopyPatch.jsx'
 import PainCopyPatch from './PainCopyPatch.jsx'
 import PainConversationPatch from './PainConversationPatch.jsx'
@@ -10,7 +9,6 @@ import PainFifthStepPatch from './PainFifthStepPatch.jsx'
 import CommercialNarrativePatch from './CommercialNarrativePatch.jsx'
 import HeroNarrativeRefinement from './HeroNarrativeRefinement.jsx'
 import OperationSectionRefinement from './OperationSectionRefinement.jsx'
-import FounderAuthorityPatch from './FounderAuthorityPatch.jsx'
 import ConversionFlowPatch from './ConversionFlowPatch.jsx'
 import ConversionConsistencyPatch from './ConversionConsistencyPatch.jsx'
 import './korax-landing-v5.css'
@@ -30,13 +28,13 @@ import './hero-narrative-refinement.css'
 import './operation-section-refinement.css'
 import './frustration-title-inline-fix.css'
 import './founder-authority-v2.css'
+import './founder-v3.css'
 import './conversion-flow.css'
 
 ReactDOM.createRoot(document.getElementById('root')).render(
   <React.StrictMode>
     <KoraxLandingV6 />
     <TrainingCopyPatch />
-    <FounderSectionPatch />
     <CasesCopyPatch />
     <PainCopyPatch />
     <PainConversationPatch />
@@ -44,7 +42,6 @@ ReactDOM.createRoot(document.getElementById('root')).render(
     <CommercialNarrativePatch />
     <HeroNarrativeRefinement />
     <OperationSectionRefinement />
-    <FounderAuthorityPatch />
     <ConversionFlowPatch />
     <ConversionConsistencyPatch />
   </React.StrictMode>,
