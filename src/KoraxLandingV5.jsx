@@ -294,7 +294,7 @@ function Training() {
             <span className="v5-label">NOSSO MODELO DE TREINAMENTO</span>
             <h2>Não treinamos apenas respostas. <em>Treinamos uma jornada comercial.</em></h2>
             <p>A Korax não aprende só o que sua empresa sabe. Ela aprende como sua empresa conduz um cliente — da primeira mensagem até o próximo passo.</p>
-            <ImageSlot src="/media/training/implantacao-korax.webp" eyebrow="IMAGEM DE IMPLANTAÇÃO" title="Treinamento e implantação da operação Korax" ratio="landscape" />
+            <ImageSlot src="./media/training/implantacao-korax.webp" eyebrow="IMAGEM DE IMPLANTAÇÃO" title="Treinamento e implantação da operação Korax" ratio="landscape" />
           </motion.div>
           <div className="v5-journey-list">
             {journey.map(([num, title, text], i) => (
@@ -315,10 +315,10 @@ function Training() {
 
 function Product() {
   const modules = [
-    ['Conversas', 'IA e equipe trabalham no mesmo histórico, sem perder contexto.', '/media/product/conversas.webp', MessagesSquare],
-    ['CRM e oportunidades', 'Cada conversa vira oportunidade, estágio, responsável e próximo passo.', '/media/product/crm.webp', Workflow],
-    ['Agenda', 'Disponibilidade, agendamento, confirmação e contexto conectados.', '/media/product/agenda.webp', CalendarCheck2],
-    ['Follow-up', 'A conversa não morre porque alguém esqueceu de voltar.', '/media/product/follow-up.webp', RefreshCw],
+    ['Conversas', 'IA e equipe trabalham no mesmo histórico, sem perder contexto.', './media/product/conversas.webp', MessagesSquare],
+    ['CRM e oportunidades', 'Cada conversa vira oportunidade, estágio, responsável e próximo passo.', './media/product/crm.webp', Workflow],
+    ['Agenda', 'Disponibilidade, agendamento, confirmação e contexto conectados.', './media/product/agenda.webp', CalendarCheck2],
+    ['Follow-up', 'A conversa não morre porque alguém esqueceu de voltar.', './media/product/follow-up.webp', RefreshCw],
   ]
   return (
     <section className="v5-section v5-product">
@@ -417,7 +417,7 @@ function Segments() {
             <p>{data.example}</p>
             <div className="v5-segment-flow">{data.flow.map((item, i) => <span key={item}>{item}{i < data.flow.length - 1 && <ArrowRight size={13} />}</span>)}</div>
           </div>
-          <ImageSlot src={`/media/segments/${active}.webp`} eyebrow="IMAGEM DO SEGMENTO" title={data.label} ratio="segment" />
+          <ImageSlot src={`./media/segments/${active}.webp`} eyebrow="IMAGEM DO SEGMENTO" title={data.label} ratio="segment" />
         </motion.div>
       </div>
     </section>
@@ -431,7 +431,7 @@ function Cases() {
       name: 'Pensou Seguros',
       problem: 'Estruturar atendimento, coleta inicial, oportunidades e acompanhamento dentro de uma operação comercial conectada.',
       work: ['Jornada de atendimento', 'Qualificação', 'CRM e oportunidades', 'Follow-up', 'Transferência com contexto'],
-      image: '/media/cases/pensou-seguros.webp',
+      image: './media/cases/pensou-seguros.webp',
       status: 'material real será inserido aqui'
     },
     {
@@ -439,7 +439,7 @@ function Cases() {
       name: 'Próxima operação',
       problem: 'Espaço reservado para documentar problema, implantação, telas reais e mudança na rotina do cliente.',
       work: ['Antes', 'Implantação', 'Depois', 'Evidências reais'],
-      image: '/media/cases/case-02.webp',
+      image: './media/cases/case-02.webp',
       status: 'case real sem números inventados'
     },
   ]

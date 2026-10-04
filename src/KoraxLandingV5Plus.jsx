@@ -88,7 +88,7 @@ function SiteContentUpgrade() {
       name: 'Pensou Seguros',
       problem: 'Estruturar atendimento, coleta inicial, oportunidades e acompanhamento dentro de uma operação comercial conectada.',
       work: ['Jornada de atendimento', 'Qualificação', 'CRM e oportunidades', 'Follow-up', 'Transferência com contexto'],
-      image: '/media/cases/pensou-seguros.webp',
+      image: './media/cases/pensou-seguros.webp',
       status: 'operação real implantada e em evolução contínua',
     },
     {
@@ -96,7 +96,7 @@ function SiteContentUpgrade() {
       name: 'Gold Alianças',
       problem: 'Receber os leads gerados pelo tráfego pago e conduzir a conversa comercial até uma decisão de compra sem deixar o cliente parado no WhatsApp.',
       work: ['Atendimento imediato', 'Envio de catálogo', 'Identificação da compra', 'Consulta de frete', 'Condução para fechamento', 'Follow-up'],
-      image: '/media/cases/gold-aliancas.webp',
+      image: './media/cases/gold-aliancas.webp',
       status: 'jornada comercial treinada para leads de tráfego pago',
     },
     {
@@ -104,7 +104,7 @@ function SiteContentUpgrade() {
       name: 'Transpox',
       problem: 'Atender empresas que chegam para cotar frete, coletar as informações necessárias e transformar a solicitação em uma oportunidade organizada para o comercial.',
       work: ['Origem e destino', 'Tipo de carga', 'Volume e prazo', 'Dados para cotação', 'CRM e oportunidade', 'Follow-up'],
-      image: '/media/cases/transpox.webp',
+      image: './media/cases/transpox.webp',
       status: 'triagem e cotação de frete estruturadas no WhatsApp',
     },
   ]
@@ -142,7 +142,7 @@ function FounderPhoto() {
     <div className="v5plus-founder-photo founder-v3-photo">
       {!failed ? (
         <img
-          src="/media/founder/diego-nogueira.webp"
+          src="./media/founder/diego-nogueira.webp"
           alt="Diego Nogueira, cofundador da Korax"
           onError={() => setFailed(true)}
         />

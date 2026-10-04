@@ -170,12 +170,12 @@ function VSLPlayer() {
           <video
             ref={videoRef}
             className="v6-video"
-            src="/media/vsl/korax-vsl.mp4"
+            src="./media/vsl/korax-vsl.mp4"
             autoPlay
             muted={muted}
             playsInline
             preload="auto"
-            poster="/media/vsl/korax-vsl-poster.webp"
+            poster="./media/vsl/korax-vsl-poster.webp"
             onLoadedData={() => setMissing(false)}
             onLoadedMetadata={(event) => setDuration(event.currentTarget.duration || 0)}
             onDurationChange={(event) => setDuration(event.currentTarget.duration || 0)}
