@@ -12,6 +12,7 @@ import OperationSectionRefinement from './OperationSectionRefinement.jsx'
 import ConversionFlowPatch from './ConversionFlowPatch.jsx'
 import ConversionConsistencyPatch from './ConversionConsistencyPatch.jsx'
 import FounderFinalCopyPatch from './FounderFinalCopyPatch.jsx'
+import FaqStructurePatch from './FaqStructurePatch.jsx'
 import './korax-landing-v5.css'
 import './v5plus-authority-footer.css'
 import './korax-landing-v6.css'
@@ -46,5 +47,6 @@ ReactDOM.createRoot(document.getElementById('root')).render(
     <ConversionFlowPatch />
     <ConversionConsistencyPatch />
     <FounderFinalCopyPatch />
+    <FaqStructurePatch />
   </React.StrictMode>,
 )
