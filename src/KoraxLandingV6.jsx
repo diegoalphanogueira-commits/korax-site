@@ -2,6 +2,7 @@ import { useEffect, useRef, useState } from 'react'
 import { motion } from 'framer-motion'
 import { ArrowRight, ChevronDown, MessageCircle } from 'lucide-react'
 import KoraxLandingV5Plus from './KoraxLandingV5Plus.jsx'
+import { KORAX_LOGO } from './korax-logo-data.js'
 
 const ease = [0.22, 1, 0.36, 1]
 const WHATSAPP_URL = '#whatsapp-demo'
@@ -11,7 +12,7 @@ function V6Header() {
     <header className="v6-header">
       <div className="v5-shell v6-header-inner">
         <a className="v6-logo" href="#inicio" aria-label="Korax - início">
-          <span>K</span><strong>KORAX</strong>
+          <img src={KORAX_LOGO} alt="Korax" />
         </a>
         <nav className="v6-nav" aria-label="Navegação principal">
           <a href="#como-funciona">Como funciona</a>
