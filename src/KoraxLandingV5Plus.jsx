@@ -139,7 +139,7 @@ function FounderPhoto() {
   const [failed, setFailed] = useState(false)
 
   return (
-    <div className="v5plus-founder-photo">
+    <div className="v5plus-founder-photo founder-v3-photo">
       {!failed ? (
         <img
           src="/media/founder/diego-nogueira.webp"
@@ -154,7 +154,7 @@ function FounderPhoto() {
           <p>Adicione a imagem em<br /><code>public/media/founder/diego-nogueira.webp</code></p>
         </div>
       )}
-      <div className="v5plus-founder-badge">
+      <div className="v5plus-founder-badge founder-v3-badge">
         <BadgeCheck size={16} />
         <span><small>COFUNDADOR</small>Korax</span>
       </div>
@@ -163,59 +163,69 @@ function FounderPhoto() {
 }
 
 function FounderSection() {
-  const pillars = [
-    [MessageCircle, 'Vendas pelo WhatsApp', 'Experiência prática em atendimento, prospecção, condução e follow-up de oportunidades.'],
-    [Route, 'Estruturação comercial', 'Desenho de jornadas, processos, responsabilidades e próximos passos para o lead não ficar perdido.'],
-    [BrainCircuit, 'IA aplicada à operação', 'Treinamento de comportamento, contexto e automações para a tecnologia trabalhar dentro do processo real da empresa.'],
+  const journey = [
+    {
+      label: '01',
+      title: 'Marketing e aquisição',
+      text: 'Entender como a atenção vira oportunidade e como posicionamento, conteúdo e aquisição alimentam o comercial.',
+    },
+    {
+      label: '02',
+      title: 'Vendas e operação',
+      text: 'Transformar conversa em processo: qualificação, responsáveis, CRM, follow-up e próximos passos claros.',
+    },
+    {
+      label: '03',
+      title: 'Tecnologia para escalar',
+      text: 'Aplicar automação e IA dentro de uma operação que já tem lógica, contexto e objetivo comercial.',
+    },
   ]
 
   return (
-    <section className="v5plus-founder" id="especialista">
+    <section className="v5plus-founder founder-v3" id="especialista">
       <div className="v5-shell">
-        <div className="v5plus-founder-grid">
-          <motion.div className="v5plus-founder-media" {...reveal}>
+        <div className="v5plus-founder-grid founder-v3-grid">
+          <motion.div className="v5plus-founder-media founder-v3-media" {...reveal}>
             <FounderPhoto />
           </motion.div>
 
-          <motion.div className="v5plus-founder-copy" {...reveal}>
-            <span className="v5plus-eyebrow">QUEM ESTÁ POR TRÁS DA ESTRATÉGIA</span>
-            <h2>
-              Diego Nogueira.
-              <em>Estruturação digital e operação comercial pelo WhatsApp.</em>
+          <motion.div className="v5plus-founder-copy founder-v3-copy" {...reveal}>
+            <span className="v5plus-eyebrow founder-v3-eyebrow">QUEM ESTÁ POR TRÁS DA KORAX</span>
+
+            <h2 className="founder-v3-title">
+              <span>Diego Nogueira.</span>
+              <em>Estratégia comercial, marketing e tecnologia aplicados a vendas.</em>
             </h2>
-            <p className="v5plus-founder-intro">
-              Diego atua na interseção entre vendas, atendimento e tecnologia. Sua trajetória passa por vendas consultivas, prospecção, condução de oportunidades pelo WhatsApp, estruturação de processos comerciais e implantação de soluções digitais.
-            </p>
-            <p>
-              Foi acompanhando na prática o que acontece entre a primeira mensagem e o próximo passo que ele identificou um padrão: muitas empresas não perdem oportunidades por falta de procura — perdem porque a resposta demora, o follow-up depende da memória, o contexto se espalha e o comercial fica dependente demais da disponibilidade da equipe.
-            </p>
-            <p>
-              A Korax nasce dessa experiência. Como cofundador e responsável pela estratégia comercial e implantação da solução, Diego transforma o processo real de cada empresa em uma jornada treinável, conectando atendimento humanizado, qualificação, CRM, agenda, follow-up e transferência inteligente para o time.
+
+            <p className="v5plus-founder-intro founder-v3-lead">
+              Há mais de 7 anos atuo entre marketing, vendas e tecnologia. Nesse caminho, aprendi uma coisa simples: gerar atenção não basta — é preciso transformar cada conversa em um próximo passo comercial.
             </p>
 
-            <div className="v5plus-founder-thesis">
-              <Sparkles size={18} />
-              <div>
-                <small>A VISÃO POR TRÁS DA KORAX</small>
-                <strong>Tecnologia sem processo só automatiza bagunça. Primeiro entendemos a operação. Depois treinamos a IA para trabalhar dentro dela.</strong>
-              </div>
+            <p className="founder-v3-story">
+              Hoje ajudo empresas a organizar essa jornada de ponta a ponta: posicionamento, atendimento, qualificação, CRM, follow-up, automação e inteligência artificial trabalhando dentro do mesmo processo. A Korax nasceu justamente dessa prática.
+            </p>
+
+            <div className="founder-v3-meta" aria-label="Experiência de Diego Nogueira">
+              <span><strong>+7 anos</strong> em marketing e vendas</span>
+              <span><strong>Operação real</strong> com empresas</span>
+              <span><strong>Cofundador</strong> da Korax</span>
             </div>
 
-            <div className="v5plus-founder-pills">
-              <span><Check size={13} /> vendas consultivas</span>
-              <span><Check size={13} /> WhatsApp comercial</span>
-              <span><Check size={13} /> CRM e processos</span>
-              <span><Check size={13} /> IA e automação</span>
+            <div className="founder-v3-thesis">
+              <Sparkles size={18} />
+              <p><small>MINHA VISÃO</small><strong>Tecnologia não conserta uma operação desorganizada. Primeiro estruturamos o processo. Depois usamos tecnologia para dar escala.</strong></p>
             </div>
           </motion.div>
         </div>
 
-        <div className="v5plus-founder-pillars">
-          {pillars.map(([Icon, title, text], index) => (
-            <motion.article key={title} {...reveal} transition={{ ...reveal.transition, delay: index * 0.06 }}>
-              <span><Icon size={19} /></span>
-              <strong>{title}</strong>
-              <p>{text}</p>
+        <div className="founder-v3-journey">
+          {journey.map((item, index) => (
+            <motion.article key={item.title} {...reveal} transition={{ ...reveal.transition, delay: index * 0.06 }}>
+              <span>{item.label}</span>
+              <div>
+                <strong>{item.title}</strong>
+                <p>{item.text}</p>
+              </div>
             </motion.article>
           ))}
         </div>
