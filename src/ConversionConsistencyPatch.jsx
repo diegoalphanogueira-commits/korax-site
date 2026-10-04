@@ -82,6 +82,12 @@ const apply = () => {
     setWhatsAppAction(buttons[1], 'Falar no WhatsApp')
   }
 
+  // Keep the specialist section immediately before the final CTA.
+  const founder = document.querySelector('.v5plus-founder')
+  if (final && founder && final.parentNode && founder.nextElementSibling !== final) {
+    final.parentNode.insertBefore(founder, final)
+  }
+
   // Footer.
   setWhatsAppAction(document.querySelector('.v5plus-footer-cta'), 'Falar com a equipe no WhatsApp')
 
