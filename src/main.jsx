@@ -33,6 +33,7 @@ import './frustration-title-inline-fix.css'
 import './founder-authority-v2.css'
 import './founder-v3.css'
 import './conversion-flow.css'
+import './korax-logo-header.css'
 
 ReactDOM.createRoot(document.getElementById('root')).render(
   <React.StrictMode>
