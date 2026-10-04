@@ -194,7 +194,7 @@ function FounderSection() {
 
             <h2 className="founder-v3-title">
               <span>Diego Nogueira.</span>
-              <em>Estratégia comercial, marketing e tecnologia aplicados a vendas.</em>
+              <em>+7 anos transformando conversas em vendas pelo WhatsApp.</em>
             </h2>
 
             <p className="v5plus-founder-intro founder-v3-lead">
