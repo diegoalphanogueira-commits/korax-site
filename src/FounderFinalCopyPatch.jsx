@@ -9,7 +9,7 @@ function applyFounderFinalCopy() {
 
   const title = section.querySelector('.v5plus-founder-copy h2')
   if (title) {
-    title.innerHTML = '<span>Diego Nogueira.</span><em>+7 anos transformando conversas em vendas pelo WhatsApp.</em>'
+    title.innerHTML = '<span>Diego Nogueira</span><em>+7 anos transformando conversas em vendas.</em>'
   }
 }
 
