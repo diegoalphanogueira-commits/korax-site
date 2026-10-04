@@ -1,0 +1,3 @@
+.v6-logo{display:flex;align-items:center;justify-content:flex-start;gap:0;color:#fff;min-width:148px}
+.v6-logo img{display:block;width:150px;height:auto;max-height:46px;object-fit:contain;object-position:left center;filter:drop-shadow(0 8px 24px rgba(16,101,255,.12))}
+@media(max-width:680px){.v6-logo{min-width:126px}.v6-logo img{width:132px;max-height:40px}}

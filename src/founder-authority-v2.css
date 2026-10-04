@@ -1,0 +1,299 @@
+/* Founder authority V2 — compact, credible and mobile-first */
+.v5plus-founder-authority-v2{
+  padding:72px 0 78px;
+}
+
+.v5plus-founder-authority-v2 .v5plus-founder-grid{
+  grid-template-columns:minmax(280px,.72fr) minmax(0,1.28fr);
+  gap:52px;
+  align-items:start;
+}
+
+.v5plus-founder-authority-v2 .v5plus-founder-photo{
+  height:420px;
+  border-radius:26px;
+}
+
+.v5plus-founder-authority-v2 .v5plus-founder-copy{
+  max-width:760px;
+}
+
+.v5plus-founder-authority-v2 .v5plus-eyebrow{
+  font-size:10px;
+  letter-spacing:.14em;
+  line-height:1.35;
+}
+
+.v5plus-founder-authority-v2 .v5plus-founder-copy h2{
+  margin:12px 0 18px;
+  max-width:720px;
+  font-size:46px;
+  line-height:1.01;
+  letter-spacing:-.045em;
+}
+
+.v5plus-founder-authority-v2 .v5plus-founder-copy h2 span,
+.v5plus-founder-authority-v2 .v5plus-founder-copy h2 em{
+  display:block;
+}
+
+.v5plus-founder-authority-v2 .v5plus-founder-copy h2 em{
+  margin-top:7px;
+  font-size:.66em;
+  line-height:1.08;
+  letter-spacing:-.03em;
+}
+
+.v5plus-founder-authority-v2 .v5plus-founder-intro{
+  max-width:680px;
+  margin:0 0 10px;
+  font-size:16.5px;
+  line-height:1.58;
+  color:#2f3b52;
+}
+
+.v5plus-founder-authority-v2 .v5plus-founder-copy>p:not(.v5plus-founder-intro){
+  max-width:660px;
+  margin:0;
+  font-size:14px;
+  line-height:1.62;
+  color:#718096;
+}
+
+.v5plus-founder-authority{
+  display:grid;
+  grid-template-columns:repeat(3,minmax(0,1fr));
+  gap:10px;
+  margin-top:20px;
+}
+
+.v5plus-founder-authority>div{
+  min-height:92px;
+  padding:15px 16px;
+  border:1px solid #dce6f6;
+  border-radius:16px;
+  background:#fff;
+  box-shadow:0 12px 32px rgba(18,45,91,.045);
+}
+
+.v5plus-founder-authority strong{
+  display:block;
+  margin-bottom:5px;
+  font-size:14px;
+  line-height:1.25;
+  color:#0d1730;
+}
+
+.v5plus-founder-authority span{
+  display:block;
+  font-size:11px;
+  line-height:1.42;
+  color:#7a879d;
+}
+
+.v5plus-founder-authority-v2 .v5plus-founder-thesis{
+  margin-top:16px;
+  padding:16px 18px;
+  border-radius:16px;
+}
+
+.v5plus-founder-authority-v2 .v5plus-founder-thesis strong{
+  font-size:13.5px;
+  line-height:1.45;
+}
+
+.v5plus-founder-authority-v2 .v5plus-founder-pillars{
+  margin-top:28px;
+  gap:12px;
+}
+
+.v5plus-founder-authority-v2 .v5plus-founder-pillars article{
+  min-height:150px;
+  padding:20px;
+  border-radius:18px;
+}
+
+.v5plus-founder-authority-v2 .v5plus-founder-pillars article>span{
+  width:38px;
+  height:38px;
+  margin-bottom:12px;
+}
+
+.v5plus-founder-authority-v2 .v5plus-founder-pillars strong{
+  font-size:14px;
+}
+
+.v5plus-founder-authority-v2 .v5plus-founder-pillars p{
+  font-size:11.5px;
+  line-height:1.5;
+}
+
+@media(max-width:980px){
+  .v5plus-founder-authority-v2{
+    padding:58px 0 64px;
+  }
+
+  .v5plus-founder-authority-v2 .v5plus-founder-grid{
+    grid-template-columns:1fr;
+    gap:26px;
+  }
+
+  .v5plus-founder-authority-v2 .v5plus-founder-photo{
+    height:310px;
+  }
+
+  .v5plus-founder-authority-v2 .v5plus-founder-copy h2{
+    max-width:680px;
+    font-size:40px;
+  }
+}
+
+@media(max-width:680px){
+  .v5plus-founder-authority-v2{
+    padding:38px 0 48px;
+  }
+
+  .v5plus-founder-authority-v2 .v5-shell{
+    padding-left:24px;
+    padding-right:24px;
+  }
+
+  .v5plus-founder-authority-v2 .v5plus-founder-grid{
+    gap:20px;
+  }
+
+  /* If the real founder image is not uploaded yet, keep the placeholder compact. */
+  .v5plus-founder-authority-v2 .v5plus-founder-photo{
+    height:210px;
+    border-radius:20px;
+  }
+
+  .v5plus-founder-authority-v2 .v5plus-founder-fallback{
+    padding:18px;
+  }
+
+  .v5plus-founder-authority-v2 .v5plus-founder-fallback>span{
+    width:62px;
+    height:62px;
+    border-radius:17px;
+    font-size:23px;
+  }
+
+  .v5plus-founder-authority-v2 .v5plus-founder-fallback small{
+    margin-top:10px;
+    font-size:7.5px;
+  }
+
+  .v5plus-founder-authority-v2 .v5plus-founder-fallback strong{
+    font-size:17px;
+  }
+
+  .v5plus-founder-authority-v2 .v5plus-founder-badge{
+    left:10px;
+    right:10px;
+    bottom:10px;
+    padding:9px 11px;
+    border-radius:13px;
+  }
+
+  .v5plus-founder-authority-v2 .v5plus-eyebrow{
+    font-size:8.5px;
+    letter-spacing:.13em;
+  }
+
+  .v5plus-founder-authority-v2 .v5plus-founder-copy h2{
+    margin:10px 0 16px;
+    font-size:34px;
+    line-height:1.01;
+    letter-spacing:-.042em;
+  }
+
+  .v5plus-founder-authority-v2 .v5plus-founder-copy h2 em{
+    margin-top:6px;
+    font-size:.62em;
+    line-height:1.12;
+  }
+
+  .v5plus-founder-authority-v2 .v5plus-founder-intro{
+    margin-bottom:9px;
+    font-size:15px;
+    line-height:1.55;
+  }
+
+  .v5plus-founder-authority-v2 .v5plus-founder-copy>p:not(.v5plus-founder-intro){
+    font-size:13.5px;
+    line-height:1.58;
+  }
+
+  .v5plus-founder-authority{
+    grid-template-columns:1fr;
+    gap:8px;
+    margin-top:17px;
+  }
+
+  .v5plus-founder-authority>div{
+    min-height:0;
+    display:grid;
+    grid-template-columns:130px 1fr;
+    align-items:center;
+    gap:10px;
+    padding:12px 14px;
+    border-radius:14px;
+  }
+
+  .v5plus-founder-authority strong{
+    margin:0;
+    font-size:12.5px;
+  }
+
+  .v5plus-founder-authority span{
+    font-size:10.5px;
+  }
+
+  .v5plus-founder-authority-v2 .v5plus-founder-thesis{
+    grid-template-columns:28px 1fr;
+    gap:10px;
+    margin-top:14px;
+    padding:14px;
+    border-radius:15px;
+  }
+
+  .v5plus-founder-authority-v2 .v5plus-founder-thesis small{
+    font-size:8px;
+  }
+
+  .v5plus-founder-authority-v2 .v5plus-founder-thesis strong{
+    margin-top:4px;
+    font-size:12.5px;
+    line-height:1.43;
+  }
+
+  .v5plus-founder-authority-v2 .v5plus-founder-pillars{
+    margin-top:20px;
+    gap:9px;
+  }
+
+  .v5plus-founder-authority-v2 .v5plus-founder-pillars article,
+  .v5plus-founder-authority-v2 .v5plus-founder-pillars article:last-child{
+    grid-template-columns:36px 1fr;
+    column-gap:11px;
+    row-gap:3px;
+    min-height:0;
+    padding:14px;
+    border-radius:15px;
+  }
+
+  .v5plus-founder-authority-v2 .v5plus-founder-pillars article>span{
+    width:36px;
+    height:36px;
+  }
+
+  .v5plus-founder-authority-v2 .v5plus-founder-pillars strong{
+    font-size:13.5px;
+  }
+
+  .v5plus-founder-authority-v2 .v5plus-founder-pillars p{
+    font-size:11px;
+    line-height:1.45;
+  }
+}

@@ -1,0 +1,33 @@
+/* Mobile refinement for the cases-of-use heading only. */
+@media (max-width: 720px) {
+  .v5-segments .v5-section-head {
+    margin-bottom: 30px;
+  }
+
+  .v5-segments .v5-section-head h2 {
+    max-width: 100%;
+    margin: 14px 0 16px;
+    font-size: 30px;
+    line-height: 1.05;
+    letter-spacing: -0.035em;
+    text-wrap: balance;
+  }
+
+  .v5-segments .v5-section-head h2 em {
+    display: block;
+    margin-top: 2px;
+    line-height: 1.05;
+  }
+
+  .v5-segments .v5-section-head p {
+    max-width: 100%;
+    font-size: 15px;
+    line-height: 1.65;
+  }
+}
+
+@media (max-width: 390px) {
+  .v5-segments .v5-section-head h2 {
+    font-size: 28px;
+  }
+}

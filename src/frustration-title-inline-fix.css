@@ -1,0 +1,6 @@
+/* Keep the IA comparison title flowing as a single sentence across color change. */
+.korax-commercial-v2 .v5-frustration-copy h2 em{
+  display:inline;
+  margin:0;
+  white-space:normal;
+}

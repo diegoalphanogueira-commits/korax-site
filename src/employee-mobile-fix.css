@@ -1,0 +1,89 @@
+/* Mobile typography standard for the commercial operation section. */
+@media (max-width: 720px) {
+  .korax-commercial-v2 .v5-employee {
+    padding-top: 72px;
+    padding-bottom: 72px;
+  }
+
+  .korax-commercial-v2 .v5-employee .v5-section-head.centered {
+    width: 100%;
+    max-width: none;
+    margin: 0 0 34px;
+    text-align: left;
+    align-items: flex-start;
+  }
+
+  .korax-commercial-v2 .v5-employee .v5-label {
+    display: inline-flex;
+    width: auto;
+    max-width: 100%;
+    margin: 0 0 18px;
+    justify-content: flex-start;
+    text-align: left;
+    font-size: 10px;
+    line-height: 1.25;
+    letter-spacing: .12em;
+  }
+
+  .korax-commercial-v2 .v5-employee .v5-section-head h2 {
+    width: 100%;
+    max-width: none;
+    margin: 0 0 18px;
+    text-align: left;
+    font-size: 39px;
+    line-height: 1.035;
+    letter-spacing: -.045em;
+    text-wrap: pretty;
+  }
+
+  .korax-commercial-v2 .v5-employee .v5-section-head h2 em {
+    display: inline;
+    margin: 0;
+    white-space: normal;
+  }
+
+  .korax-commercial-v2 .v5-employee .v5-section-head > p {
+    width: 100%;
+    max-width: 37ch;
+    margin: 0;
+    padding: 0;
+    text-align: left;
+    font-size: 17px;
+    line-height: 1.52;
+    color: #68758f;
+    text-wrap: pretty;
+  }
+
+  .korax-commercial-v2 .v5-employee .v5-capability-grid {
+    gap: 14px;
+  }
+
+  .korax-commercial-v2 .v5-employee .v5-capability {
+    min-height: 0;
+    padding: 20px 18px;
+    border-radius: 22px;
+  }
+
+  .korax-commercial-v2 .v5-employee .v5-capability strong {
+    font-size: 18px;
+    line-height: 1.18;
+  }
+
+  .korax-commercial-v2 .v5-employee .v5-capability p {
+    max-width: none;
+    font-size: 14px;
+    line-height: 1.5;
+  }
+}
+
+@media (max-width: 390px) {
+  .korax-commercial-v2 .v5-employee .v5-section-head h2 {
+    font-size: 37px;
+  }
+
+  .korax-commercial-v2 .v5-employee .v5-section-head > p {
+    max-width: 100%;
+    font-size: 16px;
+    line-height: 1.5;
+  }
+}

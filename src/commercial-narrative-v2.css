@@ -1,0 +1,133 @@
+/* Korax — commercial operation narrative refinement */
+.korax-commercial-v2 .v6-hero-copy{max-width:1120px}
+.korax-commercial-v2 .v6-hero h1{max-width:1060px;font-size:clamp(46px,5.35vw,78px);line-height:1.01;letter-spacing:-.052em}
+.korax-commercial-v2 .v6-hero h1>span,.korax-commercial-v2 .v6-hero h1>em{display:block}
+.korax-commercial-v2 .v6-hero h1>em{max-width:940px;margin:9px auto 0;color:#72cfff}
+.korax-commercial-v2 .v6-hero-copy>p{max-width:900px;font-size:17px;line-height:1.7}
+.korax-commercial-v2 .v6-proof{margin-top:20px;color:#9aa9cd}
+.korax-commercial-v2 .v6-proof span{padding:7px 10px;border:1px solid rgba(255,255,255,.07);border-radius:999px;background:rgba(255,255,255,.025)}
+.korax-commercial-v2 .v6-proof i{display:none}
+
+.korax-commercial-v2 .v5-section-head h2,
+.korax-commercial-v2 .v5-training-copy h2,
+.korax-commercial-v2 .v5-frustration-copy h2,
+.korax-commercial-v2 .v5-faq-title h2{letter-spacing:-.045em}
+.korax-commercial-v2 .v5-section-head p,
+.korax-commercial-v2 .v5-training-copy>p,
+.korax-commercial-v2 .v5-frustration-copy>p{line-height:1.65}
+
+/* Pain / chaos */
+.korax-commercial-v2 .v5-pain .v5-section-head{max-width:980px}
+.korax-commercial-v2 .v5-pain .v5-section-head h2{max-width:940px}
+.korax-commercial-v2 .v5-pain-item strong{letter-spacing:-.022em}
+.korax-commercial-v2 .v5-pain-item-paid{border-color:rgba(255,111,132,.18);background:linear-gradient(180deg,#fff,#fffafb)}
+.korax-commercial-v2 .v5-pain-item-paid::before{background:linear-gradient(180deg,#ff7086,#ff9a72);opacity:.75}
+
+/* Operation section */
+.korax-commercial-v2 .v5-employee .v5-section-head{max-width:940px;margin-left:auto;margin-right:auto}
+.korax-commercial-v2 .v5-employee .v5-section-head h2{max-width:900px;margin-left:auto;margin-right:auto}
+.korax-commercial-v2 .v5-capability{min-height:190px}
+.korax-commercial-v2 .v5-capability strong{font-size:20px;letter-spacing:-.025em}
+.korax-commercial-v2 .v5-capability p{max-width:34ch;line-height:1.55}
+.korax-commercial-v2 .v5-employee-quote{max-width:980px;margin-left:auto;margin-right:auto}
+
+/* AI layer */
+.korax-commercial-v2 .v5-frustration-copy h2{font-size:clamp(48px,4.6vw,68px);line-height:1.01}
+.korax-commercial-v2 .v5-frustration-copy p{max-width:650px}
+
+/* Training */
+.korax-commercial-v2 .v5-training-copy h2{max-width:680px}
+.korax-commercial-v2 .v5-training-copy>p{max-width:670px}
+
+/* Product visibility */
+.korax-commercial-v2 .v5-product .v5-section-head{max-width:940px}
+.korax-commercial-v2 .v5-product-card .v5-product-copy p{line-height:1.55}
+
+/* Segments */
+.korax-commercial-v2 .v5-segments .v5-section-head{max-width:930px}
+.korax-commercial-v2 .v5-segments .v5-section-head p{max-width:810px}
+
+/* Cases */
+.korax-commercial-v2 .v5-cases .v5-section-head{max-width:940px}
+.korax-commercial-v2 .v5-case-copy>p{line-height:1.55}
+
+/* Live demo */
+.korax-commercial-v2 .v5-test-copy h2{max-width:720px}
+.korax-commercial-v2 .v5-test-copy>p{max-width:680px;line-height:1.65}
+
+/* Implementation */
+.korax-commercial-v2 .v5-implementation .v5-section-head{max-width:920px}
+.korax-commercial-v2 .v5-implementation-step strong{line-height:1.25}
+
+/* FAQ */
+.korax-commercial-v2 .v5-faq-title h2{max-width:430px;line-height:1.04}
+.korax-commercial-v2 .v5-faq-list{display:grid;gap:10px}
+.korax-commercial-v2 .v5-faq-list details{overflow:hidden;border:1px solid #e2e8f2;border-radius:18px;background:#fff;box-shadow:0 9px 26px rgba(16,42,91,.045)}
+.korax-commercial-v2 .v5-faq-list summary{list-style:none;cursor:pointer;padding:18px 20px;color:#0a1835;font-size:15px;font-weight:800;line-height:1.35;letter-spacing:-.01em;position:relative;padding-right:52px}
+.korax-commercial-v2 .v5-faq-list summary::-webkit-details-marker{display:none}
+.korax-commercial-v2 .v5-faq-list summary::after{content:'+';position:absolute;right:18px;top:50%;transform:translateY(-50%);display:grid;place-items:center;width:27px;height:27px;border-radius:9px;background:#f1f5ff;color:#1769ff;font-size:17px;font-weight:700;transition:.2s ease}
+.korax-commercial-v2 .v5-faq-list details[open] summary::after{content:'–';background:#1769ff;color:#fff}
+.korax-commercial-v2 .v5-faq-list details p{margin:0;padding:0 20px 20px;color:#667085;font-size:13.5px;line-height:1.65;max-width:760px}
+
+/* Final CTA */
+.korax-commercial-v2 .v5-final h2{max-width:900px;margin-left:auto;margin-right:auto;line-height:1.01;letter-spacing:-.05em}
+.korax-commercial-v2 .v5-final h2 em{display:block;font-style:normal;color:#72cfff}
+.korax-commercial-v2 .v5-final p{max-width:760px;margin-left:auto;margin-right:auto;line-height:1.65}
+
+/* Founder */
+.korax-commercial-v2 .v5plus-founder-copy h2>span,
+.korax-commercial-v2 .v5plus-founder-copy h2>em{display:block}
+.korax-commercial-v2 .v5plus-founder-copy h2>em{font-style:normal;color:#1769ff;margin-top:5px}
+.korax-commercial-v2 .v5plus-founder-copy h2{line-height:1.03;letter-spacing:-.045em}
+.korax-commercial-v2 .v5plus-founder-copy p{line-height:1.62}
+
+/* Footer */
+.korax-commercial-v2 .v5plus-footer-brand h3{max-width:570px;line-height:1.08}
+.korax-commercial-v2 .v5plus-footer-brand>p{max-width:590px;line-height:1.6}
+
+@media(max-width:980px){
+  .korax-commercial-v2 .v6-hero h1{font-size:clamp(44px,7vw,64px);max-width:900px}
+  .korax-commercial-v2 .v5-capability{min-height:0}
+  .korax-commercial-v2 .v5-frustration-copy h2{font-size:52px}
+}
+
+@media(max-width:680px){
+  .korax-commercial-v2 .v6-hero{padding-top:50px;padding-bottom:48px}
+  .korax-commercial-v2 .v6-kicker{max-width:100%;white-space:normal;text-align:left;line-height:1.35}
+  .korax-commercial-v2 .v6-hero h1{font-size:38px;line-height:1.015;letter-spacing:-.045em;margin-top:19px;margin-bottom:18px}
+  .korax-commercial-v2 .v6-hero h1>span{max-width:10.2em;margin:0 auto}
+  .korax-commercial-v2 .v6-hero h1>em{max-width:9.4em;margin-top:7px}
+  .korax-commercial-v2 .v6-hero-copy>p{font-size:14px;line-height:1.62;max-width:35ch}
+  .korax-commercial-v2 .v6-proof{display:grid;grid-template-columns:1fr;gap:7px;max-width:310px;margin-left:auto;margin-right:auto}
+  .korax-commercial-v2 .v6-proof span{display:block;width:100%;padding:8px 10px;text-align:center}
+
+  .korax-commercial-v2 .v5-pain .v5-section-head h2,
+  .korax-commercial-v2 .v5-employee .v5-section-head h2,
+  .korax-commercial-v2 .v5-product .v5-section-head h2,
+  .korax-commercial-v2 .v5-segments .v5-section-head h2,
+  .korax-commercial-v2 .v5-cases .v5-section-head h2,
+  .korax-commercial-v2 .v5-implementation .v5-section-head h2{font-size:34px;line-height:1.055;letter-spacing:-.04em}
+
+  .korax-commercial-v2 .v5-frustration-copy h2{font-size:39px;line-height:1.03;letter-spacing:-.04em}
+  .korax-commercial-v2 .v5-training-copy h2{font-size:36px;line-height:1.04}
+  .korax-commercial-v2 .v5-faq-title h2{font-size:34px;line-height:1.05}
+  .korax-commercial-v2 .v5-final h2{font-size:39px;line-height:1.02}
+  .korax-commercial-v2 .v5plus-founder-copy h2{font-size:37px;line-height:1.03}
+
+  .korax-commercial-v2 .v5-capability{padding:18px 17px}
+  .korax-commercial-v2 .v5-capability strong{font-size:18px}
+  .korax-commercial-v2 .v5-capability p{font-size:12.5px;line-height:1.52}
+  .korax-commercial-v2 .v5-employee-quote p,
+  .korax-commercial-v2 .v5-employee-quote strong{line-height:1.15}
+
+  .korax-commercial-v2 .v5-faq-grid{gap:22px}
+  .korax-commercial-v2 .v5-faq-list summary{padding:16px 48px 16px 16px;font-size:14px}
+  .korax-commercial-v2 .v5-faq-list details p{padding:0 16px 17px;font-size:12.5px;line-height:1.58}
+  .korax-commercial-v2 .v5-faq-list summary::after{right:14px}
+
+  .korax-commercial-v2 .v5-final .v5-label{font-size:7.5px;letter-spacing:.1em}
+  .korax-commercial-v2 .v5-final p{font-size:14px;line-height:1.6}
+
+  .korax-commercial-v2 .v5plus-founder-copy h2>em{margin-top:4px}
+  .korax-commercial-v2 .v5plus-footer-brand h3{font-size:30px;line-height:1.08}
+}

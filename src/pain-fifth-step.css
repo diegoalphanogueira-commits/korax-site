@@ -1,0 +1,40 @@
+.v5-pain-item-paid{
+  border-color:rgba(23,105,255,.24);
+  background:linear-gradient(180deg,#ffffff 0%,#f8fbff 100%);
+  box-shadow:0 14px 34px rgba(23,64,140,.08);
+}
+
+.v5-pain-item-paid::before{
+  opacity:1;
+  background:linear-gradient(180deg,#1769ff,#2f7cff 55%,#64d8ff);
+}
+
+.v5-pain-item-paid>span{
+  background:linear-gradient(145deg,#e8f1ff,#f8fbff);
+  border-color:#cfe0ff;
+  color:#1769ff;
+}
+
+.v5-pain-item-paid strong{
+  color:#07162f;
+}
+
+.v5-pain-item-paid p{
+  color:#5f6f8f;
+}
+
+@media(max-width:680px){
+  .v5-pain-item-paid{
+    padding:18px 16px;
+  }
+
+  .v5-pain-item-paid strong{
+    font-size:17px;
+    line-height:1.22;
+  }
+
+  .v5-pain-item-paid p{
+    font-size:12.5px;
+    line-height:1.52;
+  }
+}

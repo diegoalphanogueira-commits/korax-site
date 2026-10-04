@@ -1,0 +1,81 @@
+/* Hero refinement — commercial operation positioning */
+.korax-commercial-v2 .v6-hero{padding-top:72px;padding-bottom:64px}
+.korax-commercial-v2 .v6-hero-copy{max-width:1180px;margin:0 auto;padding-left:18px;padding-right:18px}
+.korax-commercial-v2 .v6-kicker{max-width:max-content;margin:0 auto;justify-content:center;text-align:center;font-size:9px;line-height:1.25;letter-spacing:.13em;padding:9px 13px}
+.korax-commercial-v2 .v6-hero h1{max-width:1120px;margin:24px auto 18px;font-size:clamp(50px,4.55vw,68px);line-height:1;letter-spacing:-.045em;text-wrap:balance}
+.korax-commercial-v2 .v6-hero h1>span,.korax-commercial-v2 .v6-hero h1>em{display:inline;max-width:none;margin:0}
+.korax-commercial-v2 .v6-hero h1>em{color:#72cfff;font-style:normal}
+.korax-commercial-v2 .v6-hero-copy>p{max-width:900px;margin:0 auto;color:#b6c1dc;font-size:16px;line-height:1.58;text-wrap:balance}
+.korax-commercial-v2 .v6-actions{margin-top:24px}
+.korax-commercial-v2 .v6-proof{display:flex;justify-content:center;align-items:center;gap:8px;flex-wrap:wrap;max-width:760px;margin:16px auto 0}
+.korax-commercial-v2 .v6-proof span{display:inline-flex;align-items:center;justify-content:center;min-height:34px;padding:6px 11px;border-radius:11px;border:1px solid rgba(255,255,255,.07);background:rgba(255,255,255,.02);color:#93a4ca;font-size:10.5px;font-weight:700;letter-spacing:.01em;white-space:nowrap}
+.korax-commercial-v2 .v6-vsl-wrap{margin-top:38px}
+
+@media(max-width:980px){
+  .korax-commercial-v2 .v6-hero{padding-top:60px;padding-bottom:54px}
+  .korax-commercial-v2 .v6-hero-copy{max-width:900px;padding-left:16px;padding-right:16px}
+  .korax-commercial-v2 .v6-hero h1{font-size:clamp(44px,6vw,58px);max-width:860px}
+  .korax-commercial-v2 .v6-hero-copy>p{max-width:760px}
+}
+
+@media(max-width:680px){
+  .korax-commercial-v2 .v6-hero{padding-top:44px;padding-bottom:44px}
+  .korax-commercial-v2 .v6-hero-copy{width:100%;max-width:none;padding-left:24px;padding-right:24px;text-align:center}
+
+  .korax-commercial-v2 .v6-kicker{
+    width:max-content;
+    max-width:100%;
+    margin:0 auto;
+    justify-content:center;
+    text-align:center;
+    padding:8px 10px;
+    font-size:8px;
+    line-height:1.3;
+    letter-spacing:.105em;
+    white-space:normal;
+  }
+
+  .korax-commercial-v2 .v6-hero h1{
+    width:100%;
+    max-width:none;
+    margin:20px auto 17px;
+    text-align:center;
+    font-size:37px;
+    line-height:1.01;
+    letter-spacing:-.043em;
+    text-wrap:pretty;
+    overflow-wrap:normal;
+    word-break:normal;
+  }
+
+  .korax-commercial-v2 .v6-hero h1>span,
+  .korax-commercial-v2 .v6-hero h1>em{
+    display:inline;
+    max-width:none;
+    margin:0;
+  }
+
+  .korax-commercial-v2 .v6-hero-copy>p{
+    width:100%;
+    max-width:36ch;
+    margin:0 auto;
+    text-align:center;
+    font-size:16px;
+    line-height:1.5;
+    letter-spacing:-.01em;
+    text-wrap:pretty;
+    color:#b6c1dc;
+  }
+
+  .korax-commercial-v2 .v6-actions{margin-top:23px;gap:10px}
+  .korax-commercial-v2 .v6-proof{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:8px;max-width:none;margin-top:16px}
+  .korax-commercial-v2 .v6-proof span{width:100%;min-height:34px;padding:6px 8px;border-radius:10px;font-size:9.2px;line-height:1.2;white-space:normal;text-align:center}
+  .korax-commercial-v2 .v6-vsl-wrap{margin-top:31px}
+}
+
+@media(max-width:390px){
+  .korax-commercial-v2 .v6-hero-copy{padding-left:20px;padding-right:20px}
+  .korax-commercial-v2 .v6-hero h1{font-size:35px;line-height:1.015;letter-spacing:-.04em}
+  .korax-commercial-v2 .v6-hero-copy>p{font-size:15.5px;line-height:1.5;max-width:34ch}
+  .korax-commercial-v2 .v6-proof span{font-size:8.8px}
+}

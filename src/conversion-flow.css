@@ -1,0 +1,335 @@
+/* Korax conversion flow — two routes: demo or WhatsApp */
+.korax-demo-overlay{
+  position:fixed;
+  inset:0;
+  z-index:99999;
+  display:grid;
+  place-items:center;
+  padding:24px;
+  background:rgba(1,8,36,.76);
+  backdrop-filter:blur(14px);
+  -webkit-backdrop-filter:blur(14px);
+  animation:koraxDemoFade .2s ease both;
+}
+
+@keyframes koraxDemoFade{
+  from{opacity:0}
+  to{opacity:1}
+}
+
+.korax-demo-modal{
+  position:relative;
+  width:min(860px,100%);
+  max-height:min(900px,92vh);
+  overflow:auto;
+  border:1px solid rgba(90,135,255,.18);
+  border-radius:30px;
+  background:
+    radial-gradient(circle at 90% 0%,rgba(44,111,255,.09),transparent 28%),
+    #f8faff;
+  color:#08142f;
+  box-shadow:0 38px 120px rgba(0,8,36,.36),0 0 0 1px rgba(255,255,255,.7) inset;
+  animation:koraxDemoIn .28s cubic-bezier(.22,1,.36,1) both;
+}
+
+@keyframes koraxDemoIn{
+  from{opacity:0;transform:translateY(18px) scale(.985)}
+  to{opacity:1;transform:translateY(0) scale(1)}
+}
+
+.korax-demo-close{
+  position:absolute;
+  top:18px;
+  right:18px;
+  z-index:3;
+  width:42px;
+  height:42px;
+  display:grid;
+  place-items:center;
+  border:1px solid #dfe6f5;
+  border-radius:14px;
+  background:#fff;
+  color:#69758d;
+  cursor:pointer;
+  transition:.2s ease;
+}
+.korax-demo-close:hover{transform:translateY(-1px);color:#0d1d44;border-color:#c8d7f7}
+
+.korax-demo-head{
+  padding:42px 48px 25px;
+  border-bottom:1px solid #e5eaf4;
+}
+.korax-demo-kicker{
+  display:inline-flex;
+  align-items:center;
+  gap:8px;
+  color:#1764ff;
+  font-size:10px;
+  line-height:1;
+  font-weight:900;
+  letter-spacing:.14em;
+}
+.korax-demo-head h2{
+  max-width:690px;
+  margin:13px 0 10px;
+  font-size:34px;
+  line-height:1.08;
+  letter-spacing:-.04em;
+  color:#071229;
+}
+.korax-demo-head p{
+  max-width:700px;
+  margin:0;
+  color:#6e7a90;
+  font-size:15px;
+  line-height:1.65;
+}
+
+.korax-demo-form{padding:28px 48px 42px}
+.korax-demo-grid{display:grid;gap:16px}
+.korax-demo-grid.two{grid-template-columns:repeat(2,minmax(0,1fr))}
+.korax-demo-grid.three{grid-template-columns:repeat(3,minmax(0,1fr))}
+
+.korax-demo-form>label,
+.korax-demo-grid label{
+  display:grid;
+  gap:7px;
+  margin-bottom:16px;
+}
+.korax-demo-form label>span,
+.korax-demo-period legend{
+  color:#27334a;
+  font-size:12px;
+  line-height:1.3;
+  font-weight:800;
+}
+.korax-demo-form input,
+.korax-demo-form select{
+  width:100%;
+  height:48px;
+  padding:0 14px;
+  border:1px solid #dbe3f2;
+  border-radius:13px;
+  outline:none;
+  background:#fff;
+  color:#0d1a36;
+  font:inherit;
+  font-size:14px;
+  transition:border-color .2s ease,box-shadow .2s ease;
+}
+.korax-demo-form input:focus,
+.korax-demo-form select:focus{
+  border-color:#70a0ff;
+  box-shadow:0 0 0 4px rgba(34,106,255,.08);
+}
+
+.korax-demo-period{
+  margin:2px 0 20px;
+  padding:0;
+  border:0;
+}
+.korax-demo-period legend{margin-bottom:9px}
+.korax-demo-period>div{display:flex;gap:9px;flex-wrap:wrap}
+.korax-demo-period label{position:relative;display:block;margin:0;cursor:pointer}
+.korax-demo-period input{position:absolute;opacity:0;pointer-events:none}
+.korax-demo-period label span{
+  min-width:94px;
+  min-height:42px;
+  display:flex;
+  align-items:center;
+  justify-content:center;
+  padding:9px 14px;
+  border:1px solid #dbe3f2;
+  border-radius:999px;
+  background:#fff;
+  color:#55637a;
+  font-size:12px;
+  font-weight:800;
+  transition:.2s ease;
+}
+.korax-demo-period input:checked+span{
+  border-color:#2f74ff;
+  background:#eef4ff;
+  color:#1558dc;
+  box-shadow:0 0 0 3px rgba(47,116,255,.07);
+}
+
+.korax-demo-submit{
+  width:100%;
+  min-height:52px;
+  display:flex;
+  align-items:center;
+  justify-content:center;
+  gap:10px;
+  padding:13px 18px;
+  border:0;
+  border-radius:14px;
+  background:linear-gradient(135deg,#0564ff,#3b87ff);
+  color:#fff;
+  font:inherit;
+  font-size:14px;
+  font-weight:900;
+  cursor:pointer;
+  box-shadow:0 16px 34px rgba(0,91,255,.2);
+  transition:transform .2s ease,box-shadow .2s ease;
+}
+.korax-demo-submit:hover{transform:translateY(-1px);box-shadow:0 20px 42px rgba(0,91,255,.26)}
+.korax-demo-note{
+  display:block;
+  margin-top:11px;
+  color:#8792a6;
+  text-align:center;
+  font-size:10.5px;
+  line-height:1.5;
+}
+
+.korax-demo-success{
+  min-height:460px;
+  display:flex;
+  flex-direction:column;
+  align-items:center;
+  justify-content:center;
+  padding:54px 46px;
+  text-align:center;
+}
+.korax-demo-success-icon{
+  width:66px;
+  height:66px;
+  display:grid;
+  place-items:center;
+  margin-bottom:18px;
+  border-radius:22px;
+  color:#0d8a60;
+  background:#e8fbf3;
+}
+.korax-demo-success small{
+  color:#3576ff;
+  font-size:9px;
+  font-weight:900;
+  letter-spacing:.14em;
+}
+.korax-demo-success h2{
+  margin:10px 0 10px;
+  color:#071229;
+  font-size:32px;
+  line-height:1.08;
+  letter-spacing:-.04em;
+}
+.korax-demo-success p{
+  max-width:590px;
+  margin:0 0 24px;
+  color:#6e7a90;
+  font-size:14.5px;
+  line-height:1.65;
+}
+.korax-demo-success .korax-demo-submit{max-width:390px}
+.korax-demo-back{
+  margin-top:12px;
+  border:0;
+  background:transparent;
+  color:#6f7b91;
+  font:inherit;
+  font-size:12px;
+  font-weight:800;
+  cursor:pointer;
+}
+
+/* Dedicated demo section: remove the old self-test visual and emphasize conversion. */
+.korax-conversion-flow .v5-test .v5-test-grid{
+  grid-template-columns:minmax(0,820px)!important;
+  justify-content:center;
+  text-align:center;
+}
+.korax-conversion-flow .v5-test-copy{
+  max-width:820px;
+  margin:0 auto;
+}
+.korax-conversion-flow .v5-test-copy>p{
+  max-width:700px;
+  margin-left:auto;
+  margin-right:auto;
+}
+.korax-conversion-flow .v5-test-copy>.v5-btn,
+.korax-conversion-flow .v5-test-copy>.korax-test-whatsapp{
+  display:inline-flex;
+  vertical-align:middle;
+  margin:20px 6px 0;
+}
+.korax-conversion-flow .korax-test-whatsapp{
+  min-height:48px;
+  align-items:center;
+  justify-content:center;
+  gap:8px;
+  padding:0 18px;
+  border:1px solid rgba(255,255,255,.22);
+  border-radius:14px;
+  background:rgba(255,255,255,.06);
+  color:#fff;
+  font-weight:800;
+  text-decoration:none;
+}
+
+/* Keep action hierarchy consistent across the page. */
+.korax-conversion-flow [data-korax-action="demo"]{cursor:pointer}
+.korax-conversion-flow [data-korax-action="whatsapp"]{cursor:pointer}
+
+@media(max-width:680px){
+  .korax-demo-overlay{
+    align-items:end;
+    padding:0;
+  }
+  .korax-demo-modal{
+    width:100%;
+    max-height:94dvh;
+    border-radius:24px 24px 0 0;
+    border-left:0;
+    border-right:0;
+    border-bottom:0;
+  }
+  .korax-demo-close{
+    top:14px;
+    right:14px;
+    width:38px;
+    height:38px;
+    border-radius:12px;
+  }
+  .korax-demo-head{
+    padding:32px 22px 20px;
+  }
+  .korax-demo-kicker{font-size:8.5px}
+  .korax-demo-head h2{
+    margin-top:11px;
+    padding-right:34px;
+    font-size:28px;
+    line-height:1.08;
+  }
+  .korax-demo-head p{font-size:13.5px;line-height:1.58}
+  .korax-demo-form{padding:22px 22px 30px}
+  .korax-demo-grid.two,
+  .korax-demo-grid.three{grid-template-columns:1fr}
+  .korax-demo-grid{gap:0}
+  .korax-demo-form>label,
+  .korax-demo-grid label{margin-bottom:14px}
+  .korax-demo-form input,
+  .korax-demo-form select{height:47px;font-size:13.5px}
+  .korax-demo-period>div{display:grid;grid-template-columns:repeat(3,1fr);gap:7px}
+  .korax-demo-period label span{min-width:0;width:100%;padding:8px 6px;font-size:11px}
+  .korax-demo-submit{min-height:50px;font-size:13.5px}
+  .korax-demo-note{font-size:9.5px}
+  .korax-demo-success{min-height:430px;padding:46px 24px}
+  .korax-demo-success h2{font-size:28px}
+
+  .korax-conversion-flow .v5-test .v5-test-grid{
+    text-align:left;
+  }
+  .korax-conversion-flow .v5-test-copy>p{
+    margin-left:0;
+    margin-right:0;
+  }
+  .korax-conversion-flow .v5-test-copy>.v5-btn,
+  .korax-conversion-flow .v5-test-copy>.korax-test-whatsapp{
+    display:flex;
+    width:100%;
+    margin:10px 0 0;
+  }
+}
