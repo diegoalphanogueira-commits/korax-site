@@ -1,23 +1,13 @@
 import React from 'react'
 import ReactDOM from 'react-dom/client'
 import KoraxLandingV6 from './KoraxLandingV6.jsx'
-import TrainingCopyPatch from './TrainingCopyPatch.jsx'
-import CasesCopyPatch from './CasesCopyPatch.jsx'
-import PainCopyPatch from './PainCopyPatch.jsx'
 import PainConversationPatch from './PainConversationPatch.jsx'
 import PainFifthStepPatch from './PainFifthStepPatch.jsx'
-import CommercialNarrativePatch from './CommercialNarrativePatch.jsx'
-import HeroNarrativeRefinement from './HeroNarrativeRefinement.jsx'
-import OperationSectionRefinement from './OperationSectionRefinement.jsx'
 import ConversionFlowPatch from './ConversionFlowPatch.jsx'
-import ConversionConsistencyPatch from './ConversionConsistencyPatch.jsx'
-import FounderFinalCopyPatch from './FounderFinalCopyPatch.jsx'
-import FaqStructurePatch from './FaqStructurePatch.jsx'
 import SectionOrderPatch from './SectionOrderPatch.jsx'
 import SocialLinksPatch from './SocialLinksPatch.jsx'
 import FinalCopyV2Patch from './FinalCopyV2Patch.jsx'
 import HeroWhatsAppFix from './HeroWhatsAppFix.jsx'
-import HeroCopyPolish from './HeroCopyPolish.jsx'
 import './korax-landing-v5.css'
 import './v5plus-authority-footer.css'
 import './korax-landing-v6.css'
@@ -42,22 +32,12 @@ import './korax-logo-header.css'
 ReactDOM.createRoot(document.getElementById('root')).render(
   <React.StrictMode>
     <KoraxLandingV6 />
-    <TrainingCopyPatch />
-    <CasesCopyPatch />
-    <PainCopyPatch />
     <PainConversationPatch />
     <PainFifthStepPatch />
-    <CommercialNarrativePatch />
-    <HeroNarrativeRefinement />
-    <OperationSectionRefinement />
     <ConversionFlowPatch />
-    <ConversionConsistencyPatch />
-    <FounderFinalCopyPatch />
-    <FaqStructurePatch />
     <SectionOrderPatch />
     <SocialLinksPatch />
     <FinalCopyV2Patch />
     <HeroWhatsAppFix />
-    <HeroCopyPolish />
   </React.StrictMode>,
 )
