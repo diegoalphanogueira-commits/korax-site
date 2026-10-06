@@ -81,7 +81,7 @@ function applyFinalCopy() {
   )
   setText(
     '.v6-hero-copy > p',
-    'Centralize atendimento, equipe, CRM, follow-up, agenda e IA em um único lugar.',
+    'A Korax centraliza atendimento, equipe, CRM, follow-up e agenda, enquanto a IA atende, qualifica e conduz cada oportunidade até o próximo passo.',
   )
 
   const heroButtons = [...document.querySelectorAll('.v6-actions .v6-btn')]
