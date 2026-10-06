@@ -158,7 +158,7 @@
     line-height:1.58;
   }
 
-  /* Mobile conversation stability: no tall empty state while delayed messages animate. */
+  /* Mobile conversation animation: reveal each step while the card grows with the story. */
   .v5-pain-visual.pain-whatsapp-live{
     min-height:0!important;
   }
@@ -173,24 +173,139 @@
   }
 
   .pw-seq{
-    opacity:1!important;
-    transform:none!important;
-    animation:none!important;
+    opacity:0!important;
+    transform:translateY(8px)!important;
+    overflow:hidden;
+    max-height:0;
+  }
+
+  .pw-message.pw-seq{
+    padding-top:0!important;
+    padding-bottom:0!important;
+    border-width:0!important;
+  }
+
+  .pw-wait.pw-seq{
+    padding-top:0!important;
+    padding-bottom:0!important;
+  }
+
+  .pw-result.pw-seq{
+    padding-top:0!important;
+    border-top-color:transparent!important;
   }
 
   .pw-status-waiting{
-    display:none!important;
+    display:inline-flex!important;
+    opacity:1;
   }
 
   .pw-status-late{
-    opacity:1!important;
-    transform:none!important;
-    animation:none!important;
+    display:inline-flex!important;
+    opacity:0;
+    transform:translateY(4px);
   }
 
-  .pw-wait-1 i{width:28%!important;animation:none!important}
-  .pw-wait-2 i{width:58%!important;animation:none!important}
-  .pw-wait-3 i{width:94%!important;animation:none!important}
+  .pain-whatsapp-live.is-running .pw-second{
+    animation:pwMobileMessage .42s .55s cubic-bezier(.22,1,.36,1) forwards!important;
+  }
+
+  .pain-whatsapp-live.is-running .pw-wait-1{
+    animation:pwMobileWait .34s 1.15s ease forwards!important;
+  }
+
+  .pain-whatsapp-live.is-running .pw-wait-2{
+    animation:pwMobileWait .34s 1.85s ease forwards!important;
+  }
+
+  .pain-whatsapp-live.is-running .pw-wait-3{
+    animation:pwMobileWait .34s 2.55s ease forwards!important;
+  }
+
+  .pain-whatsapp-live.is-running .pw-wait-1 i{
+    animation:pwFill1 .58s 1.22s ease forwards!important;
+  }
+
+  .pain-whatsapp-live.is-running .pw-wait-2 i{
+    animation:pwFill2 .58s 1.92s ease forwards!important;
+  }
+
+  .pain-whatsapp-live.is-running .pw-wait-3 i{
+    animation:pwFill3 .62s 2.62s ease forwards!important;
+  }
+
+  .pain-whatsapp-live.is-running .pw-company{
+    animation:pwMobileMessage .46s 3.42s cubic-bezier(.22,1,.36,1) forwards!important;
+  }
+
+  .pain-whatsapp-live.is-running .pw-lost{
+    animation:pwMobileMessage .46s 4.42s cubic-bezier(.22,1,.36,1) forwards!important;
+  }
+
+  .pain-whatsapp-live.is-running .pw-result{
+    animation:pwMobileResult .46s 5.22s cubic-bezier(.22,1,.36,1) forwards!important;
+  }
+
+  .pain-whatsapp-live.is-running .pw-status-waiting{
+    animation:pwStatusOut .28s 3.22s ease forwards!important;
+  }
+
+  .pain-whatsapp-live.is-running .pw-status-late{
+    animation:pwStatusIn .32s 3.46s ease forwards!important;
+  }
+
+  @keyframes pwMobileMessage{
+    0%{
+      opacity:0;
+      transform:translateY(8px);
+      max-height:0;
+      padding-top:0;
+      padding-bottom:0;
+      border-width:0;
+    }
+    100%{
+      opacity:1;
+      transform:translateY(0);
+      max-height:150px;
+      padding-top:10px;
+      padding-bottom:15px;
+      border-width:1px;
+    }
+  }
+
+  @keyframes pwMobileWait{
+    0%{
+      opacity:0;
+      transform:translateY(6px);
+      max-height:0;
+      padding-top:0;
+      padding-bottom:0;
+    }
+    100%{
+      opacity:1;
+      transform:translateY(0);
+      max-height:18px;
+      padding-top:2px;
+      padding-bottom:2px;
+    }
+  }
+
+  @keyframes pwMobileResult{
+    0%{
+      opacity:0;
+      transform:translateY(8px);
+      max-height:0;
+      padding-top:0;
+      border-top-color:transparent;
+    }
+    100%{
+      opacity:1;
+      transform:translateY(0);
+      max-height:90px;
+      padding-top:15px;
+      border-top-color:rgba(255,255,255,.09);
+    }
+  }
 
   .v5-product-card .v5-image-slot.product{
     padding:7px;
