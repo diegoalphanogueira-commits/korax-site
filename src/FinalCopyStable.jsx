@@ -98,14 +98,14 @@ function applyFinalCopy() {
   setText('.v6-vsl-topline em', 'Veja a operação funcionando na prática')
 
   // DOR
-  setText('.v5-pain .v5-label', 'ONDE AS OPORTUNIDADES SE PERDEM')
+  setText('.v5-pain .v5-label', 'ONDE AS OPORTUNIDADES COMEÇAM A ESCAPAR')
   setHTML(
     '.v5-pain .v5-section-head h2',
-    'O cliente chama. <em>A venda começa a se perder quando a resposta demora.</em>',
+    'O cliente chama. <em>Se sua operação demora, a oportunidade esfria.</em>',
   )
   setText(
     '.v5-pain .v5-section-head p',
-    'Enquanto o cliente espera, informações ficam espalhadas, ninguém sabe quem deve assumir e o follow-up depende da memória. É assim que uma oportunidade quente esfria.',
+    'A resposta atrasa, ninguém sabe quem assume, o histórico fica espalhado e o follow-up não acontece no tempo certo. Quando sua equipe volta, o cliente já pode estar falando com outra empresa.',
   )
   setCards('.v5-pain-item:not(.v5-pain-item-paid)', [
     ['O cliente chama', 'Ele quer preço, disponibilidade, orçamento ou um próximo passo.'],
