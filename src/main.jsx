@@ -6,7 +6,7 @@ import PainFifthStepPatch from './PainFifthStepPatch.jsx'
 import ConversionFlowPatch from './ConversionFlowPatch.jsx'
 import SectionOrderPatch from './SectionOrderPatch.jsx'
 import SocialLinksPatch from './SocialLinksPatch.jsx'
-import FinalCopyV2Patch from './FinalCopyV2Patch.jsx'
+import FinalCopyStable from './FinalCopyStable.jsx'
 import HeroWhatsAppFix from './HeroWhatsAppFix.jsx'
 import './korax-landing-v5.css'
 import './v5plus-authority-footer.css'
@@ -37,7 +37,7 @@ ReactDOM.createRoot(document.getElementById('root')).render(
     <ConversionFlowPatch />
     <SectionOrderPatch />
     <SocialLinksPatch />
-    <FinalCopyV2Patch />
+    <FinalCopyStable />
     <HeroWhatsAppFix />
   </React.StrictMode>,
 )
