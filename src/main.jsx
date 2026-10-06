@@ -30,6 +30,7 @@ import './founder-v3.css'
 import './conversion-flow.css'
 import './korax-logo-header.css'
 import './landing-refinement-v3.css'
+import './product-image-fit-fix.css'
 
 ReactDOM.createRoot(document.getElementById('root')).render(
   <React.StrictMode>
