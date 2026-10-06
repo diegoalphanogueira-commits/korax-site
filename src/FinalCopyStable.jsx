@@ -77,11 +77,11 @@ function applyFinalCopy() {
   setHTML('.v6-kicker', '<span></span> INFRAESTRUTURA COMERCIAL INTELIGENTE PARA WHATSAPP')
   setHTML(
     '.v6-hero h1',
-    '<span>Seu WhatsApp não precisa de mais mensagens.</span> <em>Precisa de uma operação comercial.</em>',
+    '<span>Transforme seu WhatsApp em uma</span> <em>operação comercial de verdade.</em>',
   )
   setText(
     '.v6-hero-copy > p',
-    'Seu cliente chama. A Korax organiza resposta, responsáveis e follow-up para a oportunidade não se perder no caminho.',
+    'Centralize atendimento, equipe, CRM, follow-up, agenda e IA em um único lugar.',
   )
 
   const heroButtons = [...document.querySelectorAll('.v6-actions .v6-btn')]
