@@ -1,0 +1,15 @@
+@media (min-width: 681px) {
+  .v6-hero h1 {
+    max-width: 1180px;
+  }
+
+  .v6-hero h1 span,
+  .v6-hero h1 em {
+    display: inline;
+  }
+
+  .v6-hero h1 em {
+    margin-top: 0;
+    color: #72cfff;
+  }
+}
