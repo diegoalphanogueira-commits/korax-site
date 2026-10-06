@@ -1,0 +1,36 @@
+/* Final product-image fit: generated landing images are 4:3. Keep them fully visible. */
+.v5-product-card .v5-image-slot.product{
+  aspect-ratio:4/3!important;
+  height:auto!important;
+  min-height:0!important;
+  padding:8px!important;
+  overflow:hidden!important;
+  display:flex!important;
+  align-items:center!important;
+  justify-content:center!important;
+  background:#fff!important;
+}
+
+.v5-product-card .v5-image-slot.product img{
+  display:block!important;
+  width:100%!important;
+  height:100%!important;
+  max-width:100%!important;
+  max-height:100%!important;
+  object-fit:contain!important;
+  object-position:center center!important;
+  margin:0 auto!important;
+  border-radius:10px!important;
+}
+
+@media(max-width:680px){
+  .v5-product-card .v5-image-slot.product{
+    aspect-ratio:4/3!important;
+    padding:6px!important;
+  }
+
+  .v5-product-card .v5-image-slot.product img{
+    object-fit:contain!important;
+    object-position:center center!important;
+  }
+}
