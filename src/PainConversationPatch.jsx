@@ -75,30 +75,34 @@ export default function PainConversationPatch() {
       if (element) element.style.setProperty(property, value, 'important')
     }
 
+    // On mobile, reserve the FINAL layout from the beginning.
+    // Only opacity/transform change during the story, so the page never gets pushed down.
     const resetMobile = () => {
       if (!mobile) return
 
       card.querySelectorAll('.pw-seq').forEach((element) => {
         important(element, 'opacity', '0')
         important(element, 'transform', 'translateY(8px)')
-        important(element, 'max-height', '0px')
         important(element, 'overflow', 'hidden')
       })
 
       card.querySelectorAll('.pw-message.pw-seq').forEach((element) => {
-        important(element, 'padding-top', '0px')
-        important(element, 'padding-bottom', '0px')
-        important(element, 'border-width', '0px')
+        important(element, 'max-height', '170px')
+        important(element, 'padding-top', '10px')
+        important(element, 'padding-bottom', '15px')
+        important(element, 'border-width', '1px')
       })
 
       card.querySelectorAll('.pw-wait.pw-seq').forEach((element) => {
-        important(element, 'padding-top', '0px')
-        important(element, 'padding-bottom', '0px')
+        important(element, 'max-height', '22px')
+        important(element, 'padding-top', '2px')
+        important(element, 'padding-bottom', '2px')
       })
 
       const result = card.querySelector('.pw-result')
-      important(result, 'padding-top', '0px')
-      important(result, 'border-top-color', 'transparent')
+      important(result, 'max-height', '100px')
+      important(result, 'padding-top', '15px')
+      important(result, 'border-top-color', 'rgba(255,255,255,.09)')
 
       const waiting = card.querySelector('.pw-status-waiting')
       const late = card.querySelector('.pw-status-late')
@@ -118,11 +122,7 @@ export default function PainConversationPatch() {
     const revealMessage = (selector) => {
       const element = card.querySelector(selector)
       if (!element) return
-      element.style.transition = 'opacity .34s ease, transform .38s cubic-bezier(.22,1,.36,1), max-height .42s ease, padding .32s ease'
-      important(element, 'max-height', '170px')
-      important(element, 'padding-top', '10px')
-      important(element, 'padding-bottom', '15px')
-      important(element, 'border-width', '1px')
+      element.style.transition = 'opacity .34s ease, transform .38s cubic-bezier(.22,1,.36,1)'
       important(element, 'opacity', '1')
       important(element, 'transform', 'translateY(0)')
     }
@@ -130,10 +130,7 @@ export default function PainConversationPatch() {
     const revealWait = (selector, width) => {
       const element = card.querySelector(selector)
       if (!element) return
-      element.style.transition = 'opacity .28s ease, transform .3s ease, max-height .3s ease, padding .25s ease'
-      important(element, 'max-height', '22px')
-      important(element, 'padding-top', '2px')
-      important(element, 'padding-bottom', '2px')
+      element.style.transition = 'opacity .28s ease, transform .3s ease'
       important(element, 'opacity', '1')
       important(element, 'transform', 'translateY(0)')
       later(() => important(element.querySelector('i'), 'width', width), 90)
@@ -142,10 +139,7 @@ export default function PainConversationPatch() {
     const revealResult = () => {
       const element = card.querySelector('.pw-result')
       if (!element) return
-      element.style.transition = 'opacity .34s ease, transform .38s ease, max-height .4s ease, padding .3s ease'
-      important(element, 'max-height', '100px')
-      important(element, 'padding-top', '15px')
-      important(element, 'border-top-color', 'rgba(255,255,255,.09)')
+      element.style.transition = 'opacity .34s ease, transform .38s ease'
       important(element, 'opacity', '1')
       important(element, 'transform', 'translateY(0)')
     }
