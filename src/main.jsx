@@ -17,6 +17,7 @@ import SectionOrderPatch from './SectionOrderPatch.jsx'
 import SocialLinksPatch from './SocialLinksPatch.jsx'
 import FinalCopyV2Patch from './FinalCopyV2Patch.jsx'
 import HeroWhatsAppFix from './HeroWhatsAppFix.jsx'
+import HeroCopyPolish from './HeroCopyPolish.jsx'
 import './korax-landing-v5.css'
 import './v5plus-authority-footer.css'
 import './korax-landing-v6.css'
@@ -57,5 +58,6 @@ ReactDOM.createRoot(document.getElementById('root')).render(
     <SocialLinksPatch />
     <FinalCopyV2Patch />
     <HeroWhatsAppFix />
+    <HeroCopyPolish />
   </React.StrictMode>,
 )
