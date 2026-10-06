@@ -43,6 +43,33 @@ const setCards = (selector, copies) => {
   })
 }
 
+const ensurePainBridge = () => {
+  const visual = document.querySelector('.v5-pain-visual')
+  if (!visual || visual.querySelector('.korax-pain-bridge')) return
+
+  const bridge = document.createElement('div')
+  bridge.className = 'korax-pain-bridge'
+  bridge.innerHTML = '<small>NA PRÁTICA</small><strong>O cliente chama, espera e fecha com quem respondeu primeiro.</strong>'
+  visual.prepend(bridge)
+}
+
+const removeLongDashes = () => {
+  if (!document.body) return
+  const walker = document.createTreeWalker(document.body, NodeFilter.SHOW_TEXT)
+  let node = walker.nextNode()
+
+  while (node) {
+    const parent = node.parentElement
+    if (parent && !['SCRIPT', 'STYLE', 'CODE'].includes(parent.tagName)) {
+      const next = node.textContent
+        .replace(/\s+[—–]\s+/g, '. ')
+        .replace(/\s*[—–]\s*/g, ', ')
+      if (next !== node.textContent) node.textContent = next
+    }
+    node = walker.nextNode()
+  }
+}
+
 function applyFinalCopy() {
   document.body.classList.add('korax-copy-stable')
 
@@ -54,7 +81,7 @@ function applyFinalCopy() {
   )
   setText(
     '.v6-hero-copy > p',
-    'A Korax centraliza atendimento, equipe, CRM, follow-up, agenda e IA em uma única operação comercial.',
+    'Seu cliente chama. A Korax organiza resposta, responsáveis e follow-up para a oportunidade não se perder no caminho.',
   )
 
   const heroButtons = [...document.querySelectorAll('.v6-actions .v6-btn')]
@@ -71,39 +98,45 @@ function applyFinalCopy() {
   setText('.v6-vsl-topline em', 'Veja a operação funcionando na prática')
 
   // DOR
-  setText('.v5-pain .v5-label', 'O PROBLEMA NÃO É O WHATSAPP')
+  setText('.v5-pain .v5-label', 'ONDE AS OPORTUNIDADES SE PERDEM')
   setHTML(
     '.v5-pain .v5-section-head h2',
-    'O problema é tudo o que sua empresa ainda precisa lembrar <em>depois que uma mensagem chega.</em>',
+    'O cliente chama. <em>A venda começa a se perder quando a resposta demora.</em>',
   )
   setText(
     '.v5-pain .v5-section-head p',
-    'O WhatsApp recebe o cliente. Mas ele não define quem precisa responder, não acompanha oportunidades, não lembra sua equipe de fazer follow-up, não atualiza seu CRM e não mostra o que está parado. Quando tudo isso depende das pessoas, o comercial começa a depender da memória.',
+    'Enquanto o cliente espera, informações ficam espalhadas, ninguém sabe quem deve assumir e o follow-up depende da memória. É assim que uma oportunidade quente esfria.',
   )
   setCards('.v5-pain-item:not(.v5-pain-item-paid)', [
-    ['O cliente chama', 'Uma nova oportunidade entra pelo WhatsApp.'],
-    ['Alguém precisa perceber', 'É preciso identificar quem deve assumir e o que precisa ser feito.'],
-    ['A conversa acontece', 'Mas informações, histórico e próximos passos podem continuar apenas dentro daquele atendimento.'],
-    ['O próximo passo depende de alguém lembrar', 'Retorno, proposta, confirmação, negociação ou follow-up ficam para depois.'],
+    ['O cliente chama', 'Ele quer preço, disponibilidade, orçamento ou um próximo passo.'],
+    ['A resposta demora', 'A equipe está ocupada e o cliente continua esperando enquanto fala com outras empresas.'],
+    ['As informações se espalham', 'Histórico, contexto e responsável ficam divididos entre números, pessoas e conversas.'],
+    ['O retorno fica para depois', 'Proposta, confirmação e follow-up dependem de alguém lembrar de voltar.'],
   ])
 
   const paid = document.querySelector('.v5-pain-item-paid')
   if (paid) {
     const strong = paid.querySelector('strong')
     const p = paid.querySelector('p')
-    if (strong && strong.textContent.trim() !== 'A oportunidade esfria') strong.textContent = 'A oportunidade esfria'
-    if (p && p.textContent.trim() !== 'Você gerou o lead. Outra empresa fechou.') p.textContent = 'Você gerou o lead. Outra empresa fechou.'
+    if (strong && strong.textContent.trim() !== 'Outro responde primeiro') strong.textContent = 'Outro responde primeiro'
+    if (p && p.textContent.trim() !== 'O interesse existia. A oportunidade também. Faltou velocidade e continuidade.') {
+      p.textContent = 'O interesse existia. A oportunidade também. Faltou velocidade e continuidade.'
+    }
   }
 
-  setText('.pw-result strong', 'O interesse existia. A oportunidade também.')
-  setText('.pw-result span', 'Faltou uma operação preparada para continuar a conversa no momento certo.')
+  setText('.pw-result strong', 'O interesse existia.')
+  setText('.pw-result span', 'A resposta chegou tarde demais.')
+  ensurePainBridge()
 
   // SOLUÇÃO
   setText('.v5-employee .v5-label', 'É AQUI QUE A KORAX ENTRA')
-  setHTML('.v5-employee .v5-section-head h2', 'Da primeira mensagem ao próximo passo, <em>tudo conectado.</em>')
+  setHTML(
+    '.v5-employee .v5-section-head h2',
+    'Do primeiro contato ao fechamento, <em>sua operação inteira conectada.</em>',
+  )
   setText(
     '.v5-employee .v5-section-head p',
-    'A Korax transforma conversas espalhadas no WhatsApp em uma operação comercial que sua empresa consegue visualizar, organizar e acompanhar.',
+    'Atendimento, equipe, CRM, follow-up, agenda e IA trabalhando dentro do mesmo processo comercial.',
   )
   setCards('.v5-capability', [
     ['Centralize seus WhatsApps', 'Diferentes números, atendentes, setores e unidades trabalhando dentro do mesmo ambiente.'],
@@ -124,7 +157,7 @@ function applyFinalCopy() {
   )
   setText(
     '.v5-frustration-copy p',
-    'A IA da Korax recebe contexto, conhecimento, objetivos, regras, limites e próximos passos. Por isso, ela não precisa ficar presa a menus ou respostas engessadas: ela entende o que está acontecendo na conversa e continua trabalhando em direção ao objetivo definido pela sua empresa.',
+    'A IA da Korax recebe contexto, conhecimento, objetivos, regras, limites e próximos passos. Ela entende o que está acontecendo na conversa e continua trabalhando em direção ao objetivo definido pela sua empresa.',
   )
   replaceTextNode(document.querySelector('.v5-frustration .v5-inline-link'), 'Agendar uma demonstração')
 
@@ -133,18 +166,18 @@ function applyFinalCopy() {
   setHTML('.v5-training-copy h2', 'Ela aprende <em>como conduzir.</em>')
   setText(
     '.v5-training-copy > p',
-    'Antes da implantação, entendemos como sua empresa realmente funciona: serviços, produtos, perguntas frequentes, objeções, setores, responsáveis, critérios de qualificação, agenda, limites, transferências, etapas comerciais e próximos passos. A partir disso, estruturamos a jornada que a IA deverá seguir.',
+    'Antes da implantação, entendemos serviços, produtos, objeções, responsáveis, agenda, critérios, limites e próximos passos. A partir disso, estruturamos a jornada que a IA deve seguir.',
   )
 
-  // PRODUTO / VISÃO DA OPERAÇÃO
+  // PRODUTO
   setText('.v5-product .v5-label', 'POR TRÁS DE CADA CONVERSA EXISTE UMA OPERAÇÃO')
   setHTML(
     '.v5-product .v5-section-head h2',
-    'O cliente vê uma conversa. <em>Sua empresa vê tudo o que acontece por trás dela.</em>',
+    'O cliente vê uma conversa. <em>Sua empresa vê a operação inteira.</em>',
   )
   setText(
     '.v5-product .v5-section-head p',
-    'Cada atendimento pode carregar responsável, histórico, oportunidade, etapa comercial, agenda e próximo passo dentro da mesma estrutura.',
+    'Responsável, histórico, oportunidade, etapa comercial, agenda e próximo passo dentro da mesma estrutura.',
   )
   setCards('.v5-product-card .v5-product-copy', [
     ['Conversas', 'Todos os atendimentos em um único ambiente, com humanos e IA compartilhando histórico e contexto.'],
@@ -155,10 +188,13 @@ function applyFinalCopy() {
 
   // SEGMENTOS
   setText('.v5-segments .v5-label', 'UMA ESTRUTURA. DIFERENTES OPERAÇÕES.')
-  setHTML('.v5-segments .v5-section-head h2', 'A Korax se adapta ao processo da sua empresa — <em>e não o contrário.</em>')
+  setHTML(
+    '.v5-segments .v5-section-head h2',
+    'A Korax se adapta ao processo da sua empresa. <em>Não o contrário.</em>',
+  )
   setText(
     '.v5-segments .v5-section-head p',
-    'Setores, responsáveis, etapas, perguntas, qualificações, oportunidades, agenda, follow-ups e automações são configurados conforme a realidade de cada negócio.',
+    'Setores, responsáveis, etapas, perguntas, oportunidades, agenda, follow-ups e automações são configurados conforme a realidade de cada negócio.',
   )
 
   // CASES
@@ -169,7 +205,7 @@ function applyFinalCopy() {
   )
   setText(
     '.v5-cases .v5-section-head p',
-    'Não é sobre colocar mais tecnologia dentro da empresa. É sobre usar tecnologia para criar uma operação que continue funcionando depois que o lead chega.',
+    'Não é sobre colocar mais tecnologia na empresa. É sobre criar uma operação que continua funcionando depois que o lead chega.',
   )
 
   const caseCopies = {
@@ -190,7 +226,7 @@ function applyFinalCopy() {
   setHTML('.v5-test-copy h2', 'Veja como a Korax pode funcionar <em>na sua operação.</em>')
   setText(
     '.v5-test-copy > p',
-    'Não mostramos apenas uma demonstração genérica do sistema. Entendemos como seus clientes chegam, quem atende, como sua equipe trabalha e onde oportunidades podem estar ficando pelo caminho. A partir disso, mostramos como a Korax pode ser aplicada à sua operação.',
+    'Entendemos como seus clientes chegam, quem atende e onde as oportunidades podem estar ficando pelo caminho. Depois mostramos a Korax aplicada ao seu cenário.',
   )
   setText('.v5-test-copy > small', 'Demonstração orientada ao cenário real da sua empresa.')
 
@@ -199,7 +235,7 @@ function applyFinalCopy() {
   setText('.v5-implementation .v5-section-head h2', 'E esperamos que sua equipe descubra o resto.')
   setText(
     '.v5-implementation .v5-section-head p',
-    'A implantação da Korax é acompanhada. Antes de colocar a operação no ar, entendemos como sua empresa trabalha e estruturamos a tecnologia ao redor desse processo.',
+    'A implantação da Korax é acompanhada. Entendemos como sua empresa trabalha e estruturamos a tecnologia ao redor desse processo.',
   )
   const stages = ['Diagnóstico', 'Estruturação', 'Configuração', 'Treinamento da IA', 'Testes', 'Implantação e refinamento']
   ;[...document.querySelectorAll('.v5-implementation-step strong')].forEach((item, index) => {
@@ -210,15 +246,15 @@ function applyFinalCopy() {
   // FUNDADOR
   const founder = document.querySelector('.v5plus-founder')
   if (founder) {
-    setText('.v5plus-founder-copy .v5plus-eyebrow', 'A TECNOLOGIA SOZINHA NÃO ORGANIZA UMA EMPRESA')
+    setText('.v5plus-founder-copy .v5plus-eyebrow', 'QUEM ESTÁ POR TRÁS DA KORAX')
     setHTML(
       '.v5plus-founder-copy h2',
-      '<span>Diego Nogueira</span><em>Primeiro estruturamos o processo. Depois usamos tecnologia para dar escala.</em>',
+      '<span>Diego Nogueira</span><em>Processo antes da tecnologia.</em>',
     )
     setText('.v5plus-founder-intro', 'Há mais de 7 anos atuo entre marketing, vendas, atendimento e tecnologia.')
 
     const story = founder.querySelector('.founder-v3-story')
-    const storyCopy = 'A Korax nasceu da experiência de observar um problema recorrente dentro das empresas: o lead chega, a conversa acontece, mas entre atendimento, responsável, CRM, retorno e próximo passo existem pontos demais dependendo de alguém lembrar. Criamos a Korax para conectar essas partes dentro de uma única operação.'
+    const storyCopy = 'A Korax nasceu de um problema recorrente: o lead chega, a conversa acontece, mas atendimento, responsável, CRM, retorno e próximo passo continuam dependendo de alguém lembrar. A Korax conecta essas partes dentro da mesma operação.'
     if (story && story.textContent.trim() !== storyCopy) story.textContent = storyCopy
 
     const journey = founder.querySelector('.founder-v3-journey')
@@ -226,26 +262,26 @@ function applyFinalCopy() {
   }
 
   // FAQ
-  setText('.v5-faq .v5-label', 'PERGUNTAS SOBRE A OPERAÇÃO')
-  setText('.v5-faq-title h2', 'O que você precisa saber antes de estruturar sua operação na Korax.')
+  setText('.v5-faq .v5-label', 'PERGUNTAS FREQUENTES')
+  setText('.v5-faq-title h2', 'Dúvidas antes de colocar a Korax na sua operação.')
   setText(
     '.v5-faq-title p',
-    'Atendimento, equipe, CRM, histórico, follow-up, agenda, automações e inteligência artificial trabalhando dentro da mesma estrutura comercial.',
+    'Respostas diretas sobre atendimento, equipe, CRM, follow-up, agenda, automações e inteligência artificial.',
   )
   setHTML(
     '.v5-faq-list',
-    `<details open><summary>O que exatamente é a Korax?</summary><p>A Korax é uma infraestrutura comercial inteligente para empresas que atendem e vendem pelo WhatsApp. Ela centraliza conversas, equipe, setores, unidades, histórico, CRM, oportunidades, follow-ups, agenda, automações e inteligência artificial em uma única operação.</p></details>
-    <details><summary>A Korax é só um chatbot com inteligência artificial?</summary><p>Não. A inteligência artificial é uma das camadas da plataforma. A base da Korax é organizar a operação comercial: quem atende, quem é responsável, em qual etapa está a oportunidade, qual é o próximo passo e o que precisa acontecer depois.</p></details>
-    <details><summary>Posso centralizar mais de um WhatsApp na mesma operação?</summary><p>Sim. A proposta da Korax é reunir os números utilizados pela empresa em um ambiente centralizado, mantendo atendimento, equipe, histórico e oportunidades conectados à mesma estrutura.</p></details>
-    <details><summary>Como funciona para equipes, setores e unidades?</summary><p>Os atendimentos podem ser organizados por responsáveis, setores e unidades, sem perder o contexto da conversa.</p></details>
-    <details><summary>O histórico se perde se um funcionário sair ou trocar de aparelho?</summary><p>Não. O histórico fica centralizado na operação da empresa.</p></details>
-    <details><summary>A Korax tem CRM e pipeline de oportunidades?</summary><p>Sim. Uma conversa pode virar uma oportunidade comercial com etapa, responsável, valor, origem, observações e próximo passo.</p></details>
-    <details><summary>Consigo programar follow-ups e retornos?</summary><p>Sim. Follow-ups e próximos contatos podem ser programados para que oportunidades não dependam da memória do atendente.</p></details>
-    <details><summary>A agenda fica conectada ao atendimento?</summary><p>Sim. Serviços, disponibilidade, horários e confirmações podem fazer parte da mesma jornada comercial.</p></details>
-    <details><summary>Onde entra a inteligência artificial?</summary><p>A IA trabalha dentro da estrutura organizada: atende, entende contexto, qualifica, conduz próximos passos, agenda e transfere quando necessário.</p></details>
-    <details><summary>A IA pode trabalhar junto com atendentes humanos?</summary><p>Sim. A operação pode ser híbrida, preservando histórico e contexto.</p></details>
-    <details><summary>Como a implantação da Korax funciona?</summary><p>Primeiro entendemos sua operação. Depois estruturamos setores, responsáveis, CRM, jornadas, automações e regras, treinamos a IA e testamos os cenários.</p></details>
-    <details><summary>Para que tipo de empresa a Korax faz mais sentido?</summary><p>Principalmente para empresas que usam o WhatsApp como parte importante do comercial e precisam organizar conversas, equipe, oportunidades, retornos e acompanhamento.</p></details>`,
+    `<details open><summary>O que exatamente é a Korax?</summary><p>A Korax é uma infraestrutura comercial inteligente para empresas que atendem e vendem pelo WhatsApp. Ela centraliza conversas, equipe, setores, histórico, CRM, oportunidades, follow-ups, agenda, automações e inteligência artificial em uma única operação.</p></details>
+    <details><summary>A Korax é só um chatbot com inteligência artificial?</summary><p>Não. A IA é uma das camadas da plataforma. A base da Korax é organizar a operação comercial e garantir continuidade para cada oportunidade.</p></details>
+    <details><summary>Posso centralizar mais de um WhatsApp?</summary><p>Sim. A empresa pode reunir diferentes números dentro do mesmo ambiente, com equipe, histórico e oportunidades conectados.</p></details>
+    <details><summary>Como funciona para equipes, setores e unidades?</summary><p>Os atendimentos podem ser organizados por responsáveis, setores e unidades, preservando o contexto da conversa.</p></details>
+    <details><summary>O histórico se perde se um funcionário sair?</summary><p>Não. O histórico fica centralizado na operação da empresa, sem depender do aparelho ou da memória de uma única pessoa.</p></details>
+    <details><summary>A Korax tem CRM e pipeline?</summary><p>Sim. Uma conversa pode virar uma oportunidade com etapa, responsável, valor, origem e próximo passo.</p></details>
+    <details><summary>Consigo programar follow-ups?</summary><p>Sim. Retornos podem ser programados para que oportunidades não dependam da memória do atendente.</p></details>
+    <details><summary>A agenda fica conectada ao atendimento?</summary><p>Sim. Disponibilidade, horários, agendamentos e confirmações podem fazer parte da mesma jornada.</p></details>
+    <details><summary>Onde entra a inteligência artificial?</summary><p>A IA trabalha dentro da operação: atende, entende contexto, qualifica, conduz próximos passos, agenda e transfere quando necessário.</p></details>
+    <details><summary>A IA pode trabalhar junto com atendentes humanos?</summary><p>Sim. A operação pode ser híbrida, com IA e equipe compartilhando histórico e contexto.</p></details>
+    <details><summary>Como funciona a implantação?</summary><p>Primeiro entendemos sua operação. Depois estruturamos responsáveis, CRM, jornadas, automações e regras, treinamos a IA e testamos os cenários.</p></details>
+    <details><summary>Para que tipo de empresa a Korax faz mais sentido?</summary><p>Para empresas que usam o WhatsApp no comercial e precisam organizar volume de conversas, equipe, oportunidades, retornos e acompanhamento.</p></details>`,
   )
 
   // CTA FINAL
@@ -256,18 +292,20 @@ function applyFinalCopy() {
   )
   setText(
     '.v5-final p',
-    'Se sua empresa já usa o WhatsApp para atender ou vender, podemos mostrar como transformar essas conversas em uma operação comercial organizada, acompanhável e inteligente.',
+    'Se sua empresa atende ou vende pelo WhatsApp, podemos mostrar como transformar essas conversas em uma operação comercial organizada e inteligente.',
   )
 
   // FOOTER
   setText(
     '.v5plus-footer-brand h3',
-    'Seu WhatsApp deixa de ser apenas um conjunto de conversas e passa a fazer parte de uma operação comercial.',
+    'Seu WhatsApp deixa de ser um conjunto de conversas e passa a fazer parte de uma operação comercial.',
   )
   setText(
     '.v5plus-footer-brand p',
-    'Atendimento, equipe, CRM, oportunidades, follow-up, agenda, automações e inteligência artificial trabalhando no mesmo ambiente.',
+    'Atendimento, equipe, CRM, oportunidades, follow-up, agenda, automações e inteligência artificial no mesmo ambiente.',
   )
+
+  removeLongDashes()
 }
 
 export default function FinalCopyStable() {
