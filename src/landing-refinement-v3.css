@@ -11,33 +11,10 @@
   line-height:1.62;
 }
 
-/* Pain narrative: bridge the list directly into the delayed-response simulation */
+/* Pain narrative: the explanatory bridge is already covered by the section copy.
+   Keeping it out avoids duplicated messaging inside the dark conversation card. */
 .korax-pain-bridge{
-  margin:0 0 18px;
-  padding:0 2px 16px;
-  border-bottom:1px solid rgba(8,17,38,.09);
-}
-
-.korax-pain-bridge small,
-.korax-pain-bridge strong{
-  display:block;
-}
-
-.korax-pain-bridge small{
-  margin-bottom:7px;
-  color:#1769ff;
-  font-size:9px;
-  line-height:1;
-  font-weight:900;
-  letter-spacing:.14em;
-}
-
-.korax-pain-bridge strong{
-  max-width:460px;
-  color:#081126;
-  font-size:16px;
-  line-height:1.45;
-  letter-spacing:-.015em;
+  display:none!important;
 }
 
 /* Product screenshots: show the real UI instead of cropping it aggressively */
@@ -181,14 +158,39 @@
     line-height:1.58;
   }
 
-  .korax-pain-bridge{
-    margin-bottom:14px;
-    padding-bottom:13px;
+  /* Mobile conversation stability: no tall empty state while delayed messages animate. */
+  .v5-pain-visual.pain-whatsapp-live{
+    min-height:0!important;
   }
 
-  .korax-pain-bridge strong{
-    font-size:14px;
+  .pw-chat-shell{
+    min-height:0!important;
   }
+
+  .pw-chat-body{
+    flex:none!important;
+    padding-bottom:12px!important;
+  }
+
+  .pw-seq{
+    opacity:1!important;
+    transform:none!important;
+    animation:none!important;
+  }
+
+  .pw-status-waiting{
+    display:none!important;
+  }
+
+  .pw-status-late{
+    opacity:1!important;
+    transform:none!important;
+    animation:none!important;
+  }
+
+  .pw-wait-1 i{width:28%!important;animation:none!important}
+  .pw-wait-2 i{width:58%!important;animation:none!important}
+  .pw-wait-3 i{width:94%!important;animation:none!important}
 
   .v5-product-card .v5-image-slot.product{
     padding:7px;
