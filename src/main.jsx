@@ -7,6 +7,7 @@ import ConversionFlowPatch from './ConversionFlowPatch.jsx'
 import SectionOrderPatch from './SectionOrderPatch.jsx'
 import SocialLinksPatch from './SocialLinksPatch.jsx'
 import FinalCopyStable from './FinalCopyStable.jsx'
+import AICopyRefinement from './AICopyRefinement.jsx'
 import HeroWhatsAppFix from './HeroWhatsAppFix.jsx'
 import './korax-landing-v5.css'
 import './v5plus-authority-footer.css'
@@ -39,6 +40,7 @@ ReactDOM.createRoot(document.getElementById('root')).render(
     <SectionOrderPatch />
     <SocialLinksPatch />
     <FinalCopyStable />
+    <AICopyRefinement />
     <HeroWhatsAppFix />
   </React.StrictMode>,
 )
