@@ -44,7 +44,7 @@ function V6Header() {
 
 function VSLPlayer() {
   const videoRef = useRef(null)
-  const [muted, setMuted] = useState(true)
+  const [muted, setMuted] = useState(false)
   const [missing, setMissing] = useState(false)
   const [started, setStarted] = useState(false)
   const [currentTime, setCurrentTime] = useState(0)
@@ -56,7 +56,7 @@ function VSLPlayer() {
 
     let cancelled = false
     let unlocked = false
-    let isVisible = false
+    let startedOnce = false
 
     const markPlaying = (isMuted) => {
       if (cancelled) return
@@ -65,7 +65,6 @@ function VSLPlayer() {
     }
 
     const playMuted = async () => {
-      if (cancelled || !isVisible) return
       try {
         video.muted = true
         video.defaultMuted = true
@@ -77,23 +76,37 @@ function VSLPlayer() {
       }
     }
 
+    const tryAudibleAutoplay = async () => {
+      if (cancelled || startedOnce) return
+      startedOnce = true
+
+      try {
+        video.muted = false
+        video.defaultMuted = false
+        video.volume = 1
+        await video.play()
+        unlocked = true
+        markPlaying(false)
+        removeUnlockListeners()
+      } catch {
+        await playMuted()
+      }
+    }
+
     const observer = new IntersectionObserver(
       ([entry]) => {
-        isVisible = entry.isIntersecting && entry.intersectionRatio >= 0.32
-
-        if (isVisible) {
-          playMuted()
-        } else if (!video.paused) {
-          video.pause()
+        if (entry.isIntersecting && entry.intersectionRatio >= 0.18) {
+          tryAudibleAutoplay()
+          observer.disconnect()
         }
       },
-      { threshold: [0, 0.18, 0.32, 0.55] },
+      { threshold: [0, 0.18, 0.4] },
     )
 
     observer.observe(video)
 
     const unlockOnFirstInteraction = async () => {
-      if (cancelled || unlocked || !isVisible || !videoRef.current) return
+      if (cancelled || unlocked || !videoRef.current) return
 
       try {
         video.muted = false
@@ -107,16 +120,21 @@ function VSLPlayer() {
         video.muted = true
         video.defaultMuted = true
         setMuted(true)
-        try { await video.play(); setStarted(true) } catch {}
+        try {
+          await video.play()
+          setStarted(true)
+        } catch {}
       }
     }
 
     const removeUnlockListeners = () => {
       window.removeEventListener('pointerdown', unlockOnFirstInteraction, true)
+      window.removeEventListener('touchstart', unlockOnFirstInteraction, true)
       window.removeEventListener('keydown', unlockOnFirstInteraction, true)
     }
 
     window.addEventListener('pointerdown', unlockOnFirstInteraction, true)
+    window.addEventListener('touchstart', unlockOnFirstInteraction, true)
     window.addEventListener('keydown', unlockOnFirstInteraction, true)
 
     return () => {
@@ -171,9 +189,10 @@ function VSLPlayer() {
             ref={videoRef}
             className="v6-video"
             src="./media/vsl/korax-vsl.mp4"
+            autoPlay
             muted={muted}
             playsInline
-            preload="metadata"
+            preload="auto"
             poster="./media/vsl/korax-vsl-poster.webp"
             onLoadedData={() => setMissing(false)}
             onLoadedMetadata={(event) => setDuration(event.currentTarget.duration || 0)}
