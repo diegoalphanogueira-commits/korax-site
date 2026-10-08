@@ -16,6 +16,11 @@ jobs:
         with:
           fetch-depth: 0
 
+      - name: Ensure ffmpeg
+        run: |
+          sudo apt-get update
+          sudo apt-get install -y ffmpeg
+
       - name: Download HQ VSL
         env:
           VSL_URL: "https://d2jqrm6oza8nb6.cloudfront.net/datasets/73f6d177-b35e-44ea-b4ec-ae1fdf0c20a5.mp4?_jwt=eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJrZXlIYXNoIjoiMzVhYzNkNzk3MDM0ZDcyZiIsImJ1Y2tldCI6InJ1bndheS1kYXRhc2V0cyIsInN0YWdlIjoicHJvZCIsImV4cCI6MTc5MTYwOTk3N30.0ZC_ECUy58RvCWPHpl0gR3FwV_7qJAfzX5RX2kjX7q0"
