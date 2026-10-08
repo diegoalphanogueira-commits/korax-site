@@ -1,0 +1,58 @@
+name: Import vertical VSL
+
+on:
+  push:
+    paths:
+      - '.github/workflows/import-vertical-vsl.yml'
+
+permissions:
+  contents: write
+
+jobs:
+  import-vsl:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v4
+        with:
+          fetch-depth: 0
+
+      - name: Ensure ffmpeg
+        run: |
+          if ! command -v ffmpeg >/dev/null 2>&1; then
+            sudo apt-get update
+            sudo apt-get install -y ffmpeg
+          fi
+
+      - name: Download and optimize vertical VSL
+        env:
+          VSL_SOURCE_URL: "https://d2jqrm6oza8nb6.cloudfront.net/datasets/88503c1f-d735-4e3e-88e2-249fceb546fe.mp4?_jwt=eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJrZXlIYXNoIjoiNzRjMDY5N2UyNDNiYmM0NyIsImJ1Y2tldCI6InJ1bndheS1kYXRhc2V0cyIsInN0YWdlIjoicHJvZCIsImV4cCI6MTc5MTU4Mjk3NH0.unw_lKE30aXO0bF96tDXdkI3f343UCgdeuwHn4uQCJw"
+        run: |
+          set -euo pipefail
+          mkdir -p public/media/vsl
+          curl -L --fail --retry 3 --retry-delay 2 "$VSL_SOURCE_URL" -o /tmp/korax-vsl-source.mp4
+
+          ffmpeg -y -i /tmp/korax-vsl-source.mp4 \
+            -c:v libx264 -preset veryfast -crf 28 \
+            -pix_fmt yuv420p -movflags +faststart \
+            -c:a aac -b:a 96k -ac 2 \
+            public/media/vsl/korax-vsl.mp4
+
+          ffmpeg -y -ss 00:00:01 -i public/media/vsl/korax-vsl.mp4 \
+            -frames:v 1 -vf "scale=512:-2" \
+            -c:v libwebp -quality 82 \
+            public/media/vsl/korax-vsl-poster.webp
+
+          ls -lh public/media/vsl/korax-vsl.mp4 public/media/vsl/korax-vsl-poster.webp
+
+      - name: Commit optimized VSL
+        run: |
+          git config user.name "github-actions[bot]"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          git add public/media/vsl/korax-vsl.mp4 public/media/vsl/korax-vsl-poster.webp
+          if git diff --cached --quiet; then
+            echo "No media changes to commit."
+            exit 0
+          fi
+          git commit -m "media: replace landing VSL with vertical version"
+          git push
