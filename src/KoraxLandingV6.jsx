@@ -56,6 +56,7 @@ function VSLPlayer() {
 
     let cancelled = false
     let unlocked = false
+    let isVisible = false
 
     const markPlaying = (isMuted) => {
       if (cancelled) return
@@ -64,6 +65,7 @@ function VSLPlayer() {
     }
 
     const playMuted = async () => {
+      if (cancelled || !isVisible) return
       try {
         video.muted = true
         video.defaultMuted = true
@@ -75,25 +77,23 @@ function VSLPlayer() {
       }
     }
 
-    const tryAudibleAutoplay = async () => {
-      try {
-        video.muted = false
-        video.defaultMuted = false
-        video.volume = 1
-        await video.play()
-        unlocked = true
-        markPlaying(false)
-      } catch {
-        await playMuted()
-      }
-    }
+    const observer = new IntersectionObserver(
+      ([entry]) => {
+        isVisible = entry.isIntersecting && entry.intersectionRatio >= 0.32
+
+        if (isVisible) {
+          playMuted()
+        } else if (!video.paused) {
+          video.pause()
+        }
+      },
+      { threshold: [0, 0.18, 0.32, 0.55] },
+    )
+
+    observer.observe(video)
 
     const unlockOnFirstInteraction = async () => {
-      if (cancelled || unlocked || !videoRef.current) return
-
-      const rect = video.getBoundingClientRect()
-      const videoIsVisible = rect.bottom > 0 && rect.top < window.innerHeight
-      if (!videoIsVisible) return
+      if (cancelled || unlocked || !isVisible || !videoRef.current) return
 
       try {
         video.muted = false
@@ -116,12 +116,12 @@ function VSLPlayer() {
       window.removeEventListener('keydown', unlockOnFirstInteraction, true)
     }
 
-    tryAudibleAutoplay()
     window.addEventListener('pointerdown', unlockOnFirstInteraction, true)
     window.addEventListener('keydown', unlockOnFirstInteraction, true)
 
     return () => {
       cancelled = true
+      observer.disconnect()
       removeUnlockListeners()
     }
   }, [])
@@ -171,19 +171,14 @@ function VSLPlayer() {
             ref={videoRef}
             className="v6-video"
             src="./media/vsl/korax-vsl.mp4"
-            autoPlay
             muted={muted}
             playsInline
-            preload="auto"
+            preload="metadata"
             poster="./media/vsl/korax-vsl-poster.webp"
             onLoadedData={() => setMissing(false)}
             onLoadedMetadata={(event) => setDuration(event.currentTarget.duration || 0)}
             onDurationChange={(event) => setDuration(event.currentTarget.duration || 0)}
             onTimeUpdate={(event) => setCurrentTime(event.currentTarget.currentTime || 0)}
-            onCanPlay={() => {
-              const video = videoRef.current
-              if (video?.paused) video.play().catch(() => {})
-            }}
             onError={() => setMissing(true)}
             onPlay={() => setStarted(true)}
             onPause={() => setStarted(false)}
@@ -192,8 +187,8 @@ function VSLPlayer() {
         ) : (
           <div className="v6-video-placeholder">
             <span>VSL</span>
-            <small>VÍDEO HORIZONTAL · 16:9</small>
-            <strong>Sua apresentação entra aqui</strong>
+            <small>APRESENTAÇÃO VERTICAL · 9:16</small>
+            <strong>Apresentação da Korax</strong>
             <p>Suba o arquivo como <code>public/media/vsl/korax-vsl.mp4</code></p>
           </div>
         )}
