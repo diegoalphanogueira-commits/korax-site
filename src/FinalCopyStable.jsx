@@ -180,7 +180,7 @@ function applyFinalCopy() {
   )
   setText(
     '.v5-product .v5-section-head p',
-    'Responsável, histórico, oportunidade, etapa comercial, agenda e próximo passo dentro da mesma estrutura.',
+    'Responsável, histórico, oportunidade, etapa comercial, agenda, e-mails, formulários, documentos, assinaturas e próximo passo dentro da mesma estrutura.',
   )
   setCards('.v5-product-card .v5-product-copy', [
     ['Conversas', 'Todos os atendimentos em um único ambiente, com humanos e IA compartilhando histórico e contexto.'],
