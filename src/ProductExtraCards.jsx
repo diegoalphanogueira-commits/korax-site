@@ -1,6 +1,6 @@
 import { useEffect, useState } from 'react'
 import { createPortal } from 'react-dom'
-import { BrainCircuit, Image as ImageIcon, MessageSquareText } from 'lucide-react'
+import { BrainCircuit, ClipboardList, FileSignature, Image as ImageIcon, Mail, MessageSquareText } from 'lucide-react'
 
 const extraModules = [
   {
@@ -14,6 +14,24 @@ const extraModules = [
     text: 'Organize conhecimento, regras, comportamento e contexto para a IA atuar do jeito da sua operação.',
     src: './media/product/treinar-ia.webp',
     Icon: BrainCircuit,
+  },
+  {
+    title: 'E-mails',
+    text: 'Centralize os e-mails da operação, responda clientes e mantenha histórico, contexto e oportunidades conectados.',
+    src: './media/product/email.webp',
+    Icon: Mail,
+  },
+  {
+    title: 'Formulários',
+    text: 'Crie e envie formulários para coletar informações de clientes de forma organizada e integrada à operação.',
+    src: './media/product/formularios.webp',
+    Icon: ClipboardList,
+  },
+  {
+    title: 'Korax Sign',
+    text: 'Envie documentos, colete assinaturas e acompanhe abertura, visualização e assinatura em um único histórico.',
+    src: './media/product/korax-sign.webp',
+    Icon: FileSignature,
   },
 ]
 
