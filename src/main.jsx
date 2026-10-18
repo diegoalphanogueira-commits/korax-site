@@ -34,6 +34,7 @@ import './landing-refinement-v3.css'
 import './product-image-fit-fix.css'
 import './vsl-vertical.css'
 import './hero-desktop-inline.css'
+import './practical-operation.css'
 
 ReactDOM.createRoot(document.getElementById('root')).render(
   <React.StrictMode>
