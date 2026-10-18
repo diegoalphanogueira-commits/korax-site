@@ -8,15 +8,18 @@ import {
   CalendarCheck2,
   Check,
   ChevronDown,
+  ClipboardList,
   CircleUserRound,
   Clock3,
   Headphones,
   HeartPulse,
   House,
+  Mail,
   Image as ImageIcon,
   Layers3,
   MessageCircle,
   MessagesSquare,
+  FileSignature,
   RefreshCw,
   Route,
   ShieldCheck,
@@ -313,6 +316,66 @@ function Training() {
   )
 }
 
+function PracticalOperation() {
+  const actions = [
+    [
+      '01',
+      'E-mail dentro da operação',
+      'Acesse sua central de e-mails dentro da Korax e mantenha essa comunicação no mesmo ambiente de trabalho da equipe.',
+      Mail,
+    ],
+    [
+      '02',
+      'Formulários para coletar informações',
+      'Crie e envie formulários para receber as informações que sua operação precisa de forma organizada e padronizada.',
+      ClipboardList,
+    ],
+    [
+      '03',
+      'Documentos e assinaturas com Korax Sign',
+      'Envie documentos, colete assinaturas e acompanhe o histórico para saber se o documento foi aberto, visualizado ou assinado.',
+      FileSignature,
+    ],
+  ]
+
+  return (
+    <section className="v5-section v5-practical">
+      <div className="v5-shell">
+        <motion.div className="v5-section-head centered" {...reveal}>
+          <span className="v5-label">COMO A KORAX FUNCIONA NA PRÁTICA</span>
+          <h2>A conversa avança. <em>A operação continua no mesmo ambiente.</em></h2>
+          <p>
+            Quando o atendimento exige mais do que uma conversa no WhatsApp, sua equipe pode continuar o processo dentro da Korax com e-mail, formulários e documentos para assinatura.
+          </p>
+        </motion.div>
+
+        <div className="v5-practical-grid">
+          {actions.map(([num, title, text, Icon], index) => (
+            <motion.article
+              className="v5-practical-card"
+              key={title}
+              {...reveal}
+              transition={{ ...reveal.transition, delay: index * 0.05 }}
+            >
+              <div className="v5-practical-card-top">
+                <span className="v5-practical-number">{num}</span>
+                <span className="v5-practical-icon"><Icon size={21} /></span>
+              </div>
+              <strong>{title}</strong>
+              <p>{text}</p>
+            </motion.article>
+          ))}
+        </div>
+
+        <motion.div className="v5-practical-summary" {...reveal}>
+          <span>Uma única operação para</span>
+          <strong>conversar, coletar informações e formalizar próximos passos.</strong>
+        </motion.div>
+      </div>
+    </section>
+  )
+}
+
 function Product() {
   const modules = [
     ['Conversas', 'IA e equipe trabalham no mesmo histórico, sem perder contexto.', './media/product/conversas.webp', MessagesSquare],
@@ -560,6 +623,7 @@ export default function KoraxLandingV5() {
       <DigitalEmployee />
       <Frustration />
       <div id="treinamento"><Training /></div>
+      <PracticalOperation />
       <Product />
       <Segments />
       <Cases />
