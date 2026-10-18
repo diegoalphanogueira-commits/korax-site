@@ -136,7 +136,7 @@ function applyFinalCopy() {
   )
   setText(
     '.v5-employee .v5-section-head p',
-    'Atendimento, equipe, CRM, follow-up, agenda e IA trabalhando dentro do mesmo processo comercial.',
+    'Atendimento, equipe, CRM, follow-up, agenda, e-mail, formulários, assinaturas e IA trabalhando dentro do mesmo processo comercial.',
   )
   setCards('.v5-capability', [
     ['Centralize seus WhatsApps', 'Diferentes números, atendentes, setores e unidades trabalhando dentro do mesmo ambiente.'],
@@ -145,6 +145,9 @@ function applyFinalCopy() {
     ['Saiba exatamente o que acontece depois', 'Etapa, responsável, valor, origem, negociação e próximo passo ficam visíveis para sua equipe.'],
     ['Automatize seus retornos', 'Follow-ups, confirmações e tarefas podem acontecer de acordo com a jornada definida pela sua empresa.'],
     ['Coloque IA dentro da operação', 'A inteligência artificial pode atender, entender, qualificar, conduzir jornadas e executar tarefas seguindo as regras da sua empresa.'],
+    ['Centralize seus e-mails', 'Sua equipe acessa e acompanha os e-mails da operação dentro do mesmo ambiente da Korax.'],
+    ['Colete informações com formulários', 'Crie e envie formulários para receber dados de forma organizada e padronizada durante a jornada do cliente.'],
+    ['Envie documentos e colete assinaturas', 'Com o Korax Sign, envie documentos e acompanhe abertura, visualização e assinatura em um único histórico.'],
   ])
   setText('.v5-employee-quote p', 'Sua equipe deixa de administrar conversas.')
   setText('.v5-employee-quote strong', 'E passa a administrar oportunidades.')
