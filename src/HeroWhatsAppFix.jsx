@@ -1,6 +1,6 @@
 import { useEffect } from 'react'
 
-const WHATSAPP_URL = 'https://wa.me/551197349654'
+const WHATSAPP_URL = 'https://wa.me/5511970349654'
 
 function applyHeroWhatsAppFix() {
   const actions = document.querySelector('.v6-actions')
