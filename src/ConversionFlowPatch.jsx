@@ -2,7 +2,7 @@ import { useEffect, useMemo, useState } from 'react'
 import { createPortal } from 'react-dom'
 import { ArrowRight, CalendarDays, CheckCircle2, MessageCircle, X } from 'lucide-react'
 
-const WHATSAPP_NUMBER = '5511958689822'
+const WHATSAPP_NUMBER = '551197349654'
 
 const DIRECT_WHATSAPP_TEXT = 'Olá! Vim pelo site da Korax e quero entender como a plataforma pode organizar nossa operação comercial no WhatsApp.'
 
