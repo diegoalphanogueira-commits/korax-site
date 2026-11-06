@@ -348,17 +348,25 @@ function Product() {
 }
 
 const segmentData = {
+  seguros: {
+    label: 'Corretoras de seguros', icon: ShieldCheck,
+    headline: 'Da primeira mensagem ao contrato assinado, a corretora inteira opera no mesmo ambiente.',
+    flow: ['Lead chegou', 'Distribuição', 'IA e triagem', 'CRM', 'Agenda', 'Follow-up', 'E-mail', 'Korax Sign'],
+    example: 'Na Pensou Seguros, a Korax conecta atendimento, equipe e processo comercial para que cada lead avance com responsável, histórico e próximo passo claros.',
+    features: [
+      ['WhatsApps centralizados', 'Reúna diferentes números em um único ambiente e preserve o histórico da empresa.', MessagesSquare],
+      ['Equipe e setores organizados', 'Distribua conversas entre corretores, responsáveis e setores sem perder contexto.', UsersRound],
+      ['IA no atendimento inicial', 'A IA pode entender a necessidade, coletar informações e entregar o lead preparado ao corretor.', Sparkles],
+      ['Agenda e follow-up', 'Agende reuniões e programe retornos no dia e horário combinados com o cliente.', CalendarCheck2],
+      ['E-mails dentro da Korax', 'Acompanhe a comunicação por e-mail junto da mesma operação comercial.', Mail],
+      ['Documentos e Korax Sign', 'Envie documentos, acompanhe abertura e visualização, colete a assinatura e gere a cópia para o cliente.', FileSignature],
+    ],
+  },
   clinicas: {
     label: 'Clínicas e estética', icon: HeartPulse,
     headline: 'Do primeiro “quanto custa?” até a avaliação confirmada.',
     flow: ['Dúvida sobre procedimento', 'Entendimento da necessidade', 'Qualificação', 'Agenda', 'Confirmação', 'CRM'],
     example: 'Cliente pergunta às 22h sobre um procedimento. A Korax explica dentro do que foi treinado, entende a necessidade, conduz para avaliação, agenda e confirma.'
-  },
-  seguros: {
-    label: 'Seguros', icon: ShieldCheck,
-    headline: 'Da intenção de cotar até o corretor receber contexto pronto.',
-    flow: ['Tipo de seguro', 'Coleta inicial', 'Qualificação', 'Oportunidade', 'Corretor', 'Follow-up'],
-    example: 'O lead quer cotação. A Korax identifica o produto, coleta dados iniciais, organiza a oportunidade e entrega ao corretor sabendo exatamente o que já foi conversado.'
   },
   imobiliaria: {
     label: 'Imobiliárias', icon: House,
@@ -380,7 +388,7 @@ const segmentData = {
   },
   ecommerce: {
     label: 'Lojas e e-commerce', icon: Store,
-    headline: 'Da dúvida sobre o produto até a compra — sem abandonar o cliente no meio.',
+    headline: 'Da dúvida sobre o produto até a compra sem abandonar o cliente no meio.',
     flow: ['Produto', 'Dúvidas', 'Disponibilidade', 'Recomendação', 'Compra', 'Pós-venda'],
     example: 'O cliente pergunta tamanho, variação, disponibilidade ou prazo. A Korax responde usando as informações da operação, ajuda a escolher, conduz para a compra e continua disponível no pós-venda para dúvidas, status e novas oportunidades.'
   },
@@ -399,9 +407,11 @@ const segmentData = {
 }
 
 function Segments() {
-  const [active, setActive] = useState('clinicas')
+  const [active, setActive] = useState('seguros')
   const data = segmentData[active]
   const ActiveIcon = data.icon
+  const isInsurance = active === 'seguros'
+
   return (
     <section className="v5-section v5-segments" id="segmentos">
       <div className="v5-shell">
@@ -410,21 +420,89 @@ function Segments() {
           <h2>A lógica é a mesma. <em>A jornada muda conforme o seu negócio.</em></h2>
           <p>A implantação adapta perguntas, critérios, próximos passos, agenda, setores e automações à realidade de cada empresa.</p>
         </motion.div>
+
         <div className="v5-segment-tabs">
           {Object.entries(segmentData).map(([key, item]) => {
             const Icon = item.icon
-            return <button key={key} className={active === key ? 'active' : ''} onClick={() => setActive(key)}><Icon size={16} /> {item.label}</button>
+            return (
+              <button key={key} className={active === key ? 'active' : ''} onClick={() => setActive(key)}>
+                <Icon size={16} /> {item.label}
+              </button>
+            )
           })}
         </div>
-        <motion.div className="v5-segment-panel" key={active} initial={{ opacity: 0, y: 12 }} animate={{ opacity: 1, y: 0 }} transition={{ duration: 0.4, ease }}>
-          <div className="v5-segment-copy">
-            <span className="v5-segment-icon"><ActiveIcon size={22} /></span>
-            <h3>{data.headline}</h3>
-            <p>{data.example}</p>
-            <div className="v5-segment-flow">{data.flow.map((item, i) => <span key={item}>{item}{i < data.flow.length - 1 && <ArrowRight size={13} />}</span>)}</div>
-          </div>
-          <ImageSlot src={`./media/segments/${active}.webp`} eyebrow="IMAGEM DO SEGMENTO" title={data.label} ratio="segment" />
-        </motion.div>
+
+        {isInsurance ? (
+          <motion.div
+            className="v5-insurance-case"
+            key={active}
+            initial={{ opacity: 0, y: 12 }}
+            animate={{ opacity: 1, y: 0 }}
+            transition={{ duration: 0.4, ease }}
+          >
+            <div className="v5-insurance-case-head">
+              <div className="v5-insurance-case-copy">
+                <span className="v5-insurance-real"><i /> OPERAÇÃO REAL · PENSOU SEGUROS</span>
+                <span className="v5-segment-icon"><ActiveIcon size={22} /></span>
+                <h3>{data.headline}</h3>
+                <p>{data.example}</p>
+                <div className="v5-insurance-flow">
+                  {data.flow.map((item, i) => (
+                    <span key={item}>{item}{i < data.flow.length - 1 && <ArrowRight size={13} />}</span>
+                  ))}
+                </div>
+              </div>
+
+              <div className="v5-insurance-visual">
+                <ImageSlot
+                  src="./media/segments/seguros.webp"
+                  eyebrow="OPERAÇÃO DE SEGUROS"
+                  title="Korax aplicada à operação de uma corretora de seguros"
+                  ratio="segment"
+                />
+                <div className="v5-insurance-visual-note">
+                  <small>DO PRIMEIRO CONTATO AO FECHAMENTO</small>
+                  <strong>Uma única operação para acompanhar cada oportunidade até a assinatura.</strong>
+                </div>
+              </div>
+            </div>
+
+            <div className="v5-insurance-features">
+              {data.features.map(([title, text, Icon], index) => (
+                <motion.article
+                  className="v5-insurance-feature"
+                  key={title}
+                  {...reveal}
+                  transition={{ ...reveal.transition, delay: (index % 3) * 0.04 }}
+                >
+                  <span><Icon size={19} /></span>
+                  <div>
+                    <strong>{title}</strong>
+                    <p>{text}</p>
+                  </div>
+                </motion.article>
+              ))}
+            </div>
+
+            <div className="v5-insurance-close">
+              <div>
+                <small>O CLIENTE VÊ UMA CONVERSA</small>
+                <strong>A corretora acompanha toda a operação até o contrato assinado.</strong>
+              </div>
+              <a href="#whatsapp-demo">Ver a Korax para minha corretora <ArrowRight size={17} /></a>
+            </div>
+          </motion.div>
+        ) : (
+          <motion.div className="v5-segment-panel" key={active} initial={{ opacity: 0, y: 12 }} animate={{ opacity: 1, y: 0 }} transition={{ duration: 0.4, ease }}>
+            <div className="v5-segment-copy">
+              <span className="v5-segment-icon"><ActiveIcon size={22} /></span>
+              <h3>{data.headline}</h3>
+              <p>{data.example}</p>
+              <div className="v5-segment-flow">{data.flow.map((item, i) => <span key={item}>{item}{i < data.flow.length - 1 && <ArrowRight size={13} />}</span>)}</div>
+            </div>
+            <ImageSlot src={`./media/segments/${active}.webp`} eyebrow="IMAGEM DO SEGMENTO" title={data.label} ratio="segment" />
+          </motion.div>
+        )}
       </div>
     </section>
   )
