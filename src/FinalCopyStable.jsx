@@ -190,14 +190,14 @@ function applyFinalCopy() {
   ])
 
   // SEGMENTOS
-  setText('.v5-segments .v5-label', 'UMA ESTRUTURA. DIFERENTES OPERAÇÕES.')
+  setText('.v5-segments .v5-label', 'CORRETORAS DE SEGUROS NA PRÁTICA')
   setHTML(
     '.v5-segments .v5-section-head h2',
-    'A Korax se adapta ao processo da sua empresa. <em>Não o contrário.</em>',
+    'Veja como uma corretora pode operar <em>do primeiro contato até o contrato assinado.</em>',
   )
   setText(
     '.v5-segments .v5-section-head p',
-    'Setores, responsáveis, etapas, perguntas, oportunidades, agenda, follow-ups e automações são configurados conforme a realidade de cada negócio.',
+    'Na Pensou Seguros, a Korax conecta WhatsApps, colaboradores, setores, CRM, agenda, follow-up, IA, e-mails e assinaturas dentro da mesma operação comercial. Os outros segmentos continuam disponíveis para comparação.',
   )
 
   // CASES
