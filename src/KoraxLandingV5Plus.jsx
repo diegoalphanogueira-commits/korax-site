@@ -298,7 +298,7 @@ function ProfessionalFooter() {
 
         <div className="v5plus-footer-bottom">
           <span>© {new Date().getFullYear()} Korax. Todos os direitos reservados.</span>
-          <div><a href="#">Política de Privacidade</a><a href="#">Termos de Uso</a></div>
+          <div><a href="/politica-de-privacidade/">Política de Privacidade</a><a href="/termos-de-servico/">Termos de Serviço</a><a href="/exclusao-de-dados/">Exclusão de Dados</a></div>
         </div>
       </div>
     </footer>
